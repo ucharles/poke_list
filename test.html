@@ -1,0 +1,465 @@
+<html>
+<head>
+<style>
+div.at_type {
+	height: auto;
+	border: 1px solid gold; 
+	float: left; 
+	width: 48%;
+}
+
+div.def_type {
+	height: auto;
+	border: 1px solid red; 
+	float: right; 
+	width: 48%;
+}
+
+div.temp {
+	height: auto;
+	border: 1px solid blue; 
+	float: left; 
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 5%;
+}
+
+#autoInput {
+	width:50%;
+	max-width : 200px;
+}
+
+#pokeimg{
+	width: 20%;
+	padding: 5px;
+}
+
+#type_1 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #525252; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#ADA594;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_2 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #732108; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#F75131;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_3 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #425294; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#399CFF;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_4 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #426B39; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#7BCE52;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_5 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #735218; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#FFC631;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+
+#type_6 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #425294; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#5ACEE7;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_7 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #4A3931; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#A55239;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_8 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #4A3952; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#B55AA5;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_9 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #735218; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#D2B158;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_10 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #425294; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#9CADF7;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_11 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #6B3939; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#FF73A5;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_12 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #426B39; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#ADBD21;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_13 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #735218; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#BDA55A;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_14 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #4A3952; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#6363B5;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_15 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #4A3994; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#7961E4;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+
+#type_16 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #4A3931; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#735A4A;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_17 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #525252; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#ADADC6;
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+#type_18 {
+	display:inline-block; 
+	margin:1px; 
+	width:60px;
+	text-align: center;
+	border: solid 3px #BD18CE; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	background:#F7B5F7;ㄹ
+	border-radius: 3px;
+	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
+}
+
+
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+<script>
+
+// 0 no ,1 fi, 2 wa ,3 gr, 4 el 5 ic , 6fig, 7 po ,8 gro, 9 fl, 10 ps, 11 bu, 12 ro, 13 gh, 14 dr, 15 da, 16 st, 17 fa
+const type_damage = [[1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1],[1,0.5,2,0.5,1,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5],[1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1],[1,2,0.5,0.5,0.5,2,1,2,0.5,2,1,2,1,1,1,1,1,1],[1,1,1,1,0.5,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1],[1,2,1,1,1,0.5,2,1,1,1,1,1,2,1,1,1,2,1],[1,1,1,1,1,1,1,1,1,2,2,0.5,0.5,1,1,0.5,1,2],[1,1,1,0.5,1,1,0.5,0.5,2,1,2,0.5,1,1,1,1,1,0.5],[1,1,2,2,0,2,1,0.5,1,1,1,1,0.5,1,1,1,1,1],[1,1,1,0.5,2,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1],[1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1],[1,2,1,0.5,1,1,0.5,1,0.5,2,1,1,2,1,1,1,1,1],[0.5,0.5,2,2,1,1,2,0.5,2,0.5,1,1,1,1,1,1,2,1],[0,1,1,1,1,1,0,0.5,1,1,1,0.5,1,2,1,2,1,1],[1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2],[1,1,1,1,1,1,2,1,1,1,0,2,11,0.5,1,0.5,1,2],[0.5,2,1,0.5,1,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5],[1,1,1,1,1,1,0.5,2,1,1,1,0.5,1,1,0,0.5,2,1]];
+
+result_damage = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+type_name=['노말','불꽃','물','풀','전기','얼음','격투','독','땅','비행','에스퍼','벌레','바위','고스트','드래곤','악','강철','페어리'];
+type_name_eng=[[1,'normal'],[2,'fire'],[3,'water'],[4,'grass'],[5,'electric'],[6,'ice'],[7,'fighting'],[8,'poison'],[9,'ground'],[10,'flying'],[11,'psychic'],[12,'bug'],[13,'rock'],[14,'ghost'],[15,'dragon'],[16,'dark'],[17,'steel'],[18,'fairy']]
+damx = [8,4,2,1,0.5,0.25,0.125,0]
+
+function get_pokename(n) {
+		for (i = 0; i < poke_list.length; i++) {
+            if (poke_list[i][0] == n) {
+                $('#pokename').text(poke_list[i][1]);
+            }
+        }
+}
+
+
+function pokesearch(n) {
+			
+     jQuery.ajax({
+                type: "GET",
+                url: "https://pokeapi.co/api/v2/pokemon/"+n,
+                cache: false,
+                datatype: "JSON",
+                success: function (obj) {
+                		reset()
+                		get_pokename(n)
+                		$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
+                		//$("#pokeimg").attr("src","official-artwork/"+n+".png")
+                		console.log(obj['types']);
+                		for (const item of obj['types']) {
+                			for (i = 0; i < type_name_eng.length; i++) {
+                				if (type_name_eng[i][1] == item['type']['name']) {
+                					console.log(type_name_eng[i][0]);
+                					add_types(type_name_eng[i][0]);
+                			}
+                		}
+                	}
+
+
+                },
+                error: function (xhr, status, error) {
+                    console.log("ERROR!!!");
+                }
+            });
+            
+        
+}
+
+function damage_calc(n) {
+const temp_damage = []
+for (let i = 0; i < result_damage.length; i++){
+  temp_damage.push(type_damage[n-1][i] * result_damage[i]);
+}
+result_damage = temp_damage;
+}
+
+	//8 4 2 1 0.5 0.25 0.125 0
+function print_result() {
+	$(".dam").empty();
+	
+	for (let i = 0; i < result_damage.length; i++){
+		for (const item of damx) {
+			if(result_damage[i] == item) {
+				$("#"+item.toString().replace(/\./g,'_')).append($("<span id='type_"+(i+1)+"' class='res_type'>"+type_name[i]+"</span>"));
+			}
+		}
+	}
+	display_none();
+ }
+
+ function add_types(n) {
+ 	if($("span.type").length < 3) {
+				$("#at_type_box").append($("<span id='type_"+n+"' class='type'>"+type_name[n-1]+"</span>"));
+				damage_calc(n);
+				print_result();
+			}
+ }
+
+ function display_none() {
+ 	for (const item of damx) {
+ 		//alert($("div#"+item.toString().replace(/\./g,'_')).children().length);
+ 		if($("div#"+item.toString().replace(/\./g,'_')).children().length == 0 ) {
+ 			$("div#display_"+item.toString().replace(/\./g,'_')).css("display", "none");
+ 			//alert("div#display_"+item.toString().replace(/\./g,'_'))
+ 		}
+ 		else{
+ 			$("div#display_"+item.toString().replace(/\./g,'_')).css("display", "block");
+ 		}
+ 	}
+
+ 	if($('#only_2up').is(":checked") == true){
+ 		$("div#display_1").css("display", "none");
+ 		$("div#display_0_5").css("display", "none");
+ 		$("div#display_0_25").css("display", "none");
+ 		$("div#display_0_125").css("display", "none");
+ 		$("div#display_0").css("display", "none");
+ 	}
+ }
+
+	$(function () {
+		$('button.type').on('click', function(){
+			value_temp = $(this).val();
+			// alert($("span").length); // °¹¼ö È®ÀÎ 
+			$('#pokename').text('사용자 정의');
+			$("#pokeimg").attr("src","");
+			add_types(value_temp)
+				
+		})
+
+	});
+
+function reset() {
+	$("#pokeimg").attr("src","");
+	$("#autoInput").val("");
+	$("#at_type_box").empty();
+	$('#pokename').text('');
+	result_damage = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+	$(".dam").empty();
+	display_none()
+}
+</script>
+
+<link rel="stylesheet" href="css/autocomplete.css">
+<!-- css에는 autocomplet의 요소를 만들떄 필요한 scrpit가 담겨져 있습니다. -->
+<script type="text/javascript" src="autocomplate.js"></script>
+<!-- css에는 autocomplet의 요소의 샘플 json의 값이 담겨져 있습니다. -->
+<script type="text/javascript" src="poke_list.js"></script>
+<script>
+        // autocomplete 부분을 생성
+        window.onload = function () {
+            autocomplete.setAutocomplete(document.getElementById("autoInput"), poke_list)
+        }
+    </script>
+</head>
+<body>
+<div class="at_type">
+	<h1>포켓몬 : <strong id=pokename></strong></h1>
+	<img id=pokeimg onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png'">
+	<!-- <img id=pokeimg onerror="this.src='poke-ball.png'"> -->
+	<p>search input</p>
+	<div class="srch_form autocomplete">
+        <input id="autoInput" placeholder="Search...">
+    </div>
+	<p>attack type</p>
+<div id="at_type_box"></div>
+<button onclick=reset()>reset</button>
+<p>type selector</p>
+<div>
+	<button id=type_1 class="type" value="1">노말</button>
+	<button id=type_2 class="type" value="2">불꽃</button>
+	<button id=type_3 class="type" value="3">물</button>
+	<button id=type_4 class="type" value="4">풀</button>
+	<button id=type_5 class="type" value="5">전기</button>
+	<button id=type_6 class="type" value="6">얼음</button>
+	<button id=type_7 class="type" value="7">격투</button>
+	<button id=type_8 class="type" value="8">독</button>
+	<button id=type_9 class="type" value="9">땅</button>
+	<button id=type_10 class="type" value="10">비행</button>
+	<button id=type_11 class="type" value="11">에스퍼</button>
+	<button id=type_12 class="type" value="12">벌레</button>
+	<button id=type_13 class="type" value="13">바위</button>
+	<button id=type_14 class="type" value="14">고스트</button>
+	<button id=type_15 class="type" value="15">드래곤</button>
+	<button id=type_16 class="type" value="16">악</button>
+	<button id=type_17 class="type" value="17">강철</button>
+	<button id=type_18 class="type" value="18">페어리</button>
+	
+</div>
+</div>
+<div class="def_type">
+	<p>type result</p>
+	<div id="display_8" style="display: none;"><h3>(8배)</h3><div id="8" class="dam"></div></div>
+	<div id="display_4" style="display: none;"><h3>쓰면 기분이 좋아짐 (4배)</h3><div id="4" class="dam"></div></div>
+	<div id="display_2" style="display: none;"><h3>효과가 좋음 (2배)</h3><div id="2" class="dam"></div></div>
+	<div id="display_1" style="display: none;"><h3>(1배)</h3><div id="1" class="dam"></div></div>
+	<div id="display_0_5" style="display: none;"><h3>쓰면 마음이 아픔 (0.5배)</h3><div id="0_5" class="dam"></div></div>
+	<div id="display_0_25" style="display: none;"><h3>(0.25배)</h3><div id="0_25" class="dam"></div></div>
+	<div id="display_0_125" style="display: none;"><h3>(0.125배)</h3><div id="0_125" class="dam"></div></div>
+	<div id="display_0" style="display: none;"><h3>(0배)</h3><div id="0" class="dam"></div></div>
+	<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은 타입만 보기</label>
+</div>
+</body>
+</html>
