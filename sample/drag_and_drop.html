@@ -1,0 +1,118 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Drag and Drop test</title>
+  <style>
+    div.container {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      padding: 10px;
+      border: solid 15px #8B4513;
+      float: left;
+    }
+
+    div.entry {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      padding: 10px;
+      border: solid 5px blue;
+      float: left;
+    }
+
+  </style>
+</head>
+
+<body>
+	<div id="container" class="container"draggable="true" ondragover="dragEnter(event)" ondragstart="drag(event)">
+    		<img id="monalisa" alt='test' width="100" height="100" src="" >
+		<input type="hidden" name="test" value="test2" >
+  	</div>
+	<div id="container2" class="container" draggable="true" ondragover="dragEnter(event)" ondragstart="drag(event)">
+		<img id="monalisa" alt='test2' width="100" height="100" src="" >
+		<input type="hidden" name="test" value="test" >
+	</div>
+
+  	<div id="entry1" class="entry"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
+	<div id="entry2" class="entry"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
+	<div id="entry3" class="entry"  draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
+
+  <script>
+	
+    function child_clone(child) {
+	var child_node = [];
+	for ( let item of child) {
+			child_node.push(item.cloneNode());
+			
+	}
+	return child_node;
+    }
+
+    function dragEnter(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      	
+	if(data == "container" || data == "container2" ) { 
+		const my_li = document.getElementById(data);
+		var test2 = ev.target;
+		if (test2.id == "monalisa") {
+			test2 = ev.target.parentNode;
+			console.log(test2);
+		}
+
+		if (test2.nodeName == "DIV" && test2.id.substring(0,5) == "entry" ) {
+			if ( test2.childNodes.length != 0 ) {
+				test2.replaceChildren();
+			
+			}
+			
+			const childNodes = my_li.childNodes;
+			for ( let item of childNodes) {
+			var test =  item.cloneNode();
+		
+			test2.appendChild(test);
+			}
+		}
+	}
+	
+	else {
+		const my_li = document.getElementById(data);
+		const childNodes = my_li.childNodes;
+
+		var test2 = ev.target;
+		if (test2.id == "monalisa") {
+			test2 = ev.target.parentNode;
+		}	
+		target_childNodes = test2.childNodes;
+		
+		child_temp = child_clone(childNodes);
+		child_temp2 = child_clone(target_childNodes);
+
+		my_li.replaceChildren();
+test2.replaceChildren();
+
+		for ( let item of child_temp2) {
+			my_li.appendChild(item);
+		}
+
+		for ( let item2 of child_temp) {
+			test2.appendChild(item2);
+		}
+
+	}
+	
+    }
+  </script>
+
+</body>
+
+</html>
