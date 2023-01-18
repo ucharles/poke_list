@@ -287,45 +287,39 @@ type_name=['노말','불꽃','물','풀','전기','얼음','격투','독','땅',
 type_name_eng=[[1,'normal'],[2,'fire'],[3,'water'],[4,'grass'],[5,'electric'],[6,'ice'],[7,'fighting'],[8,'poison'],[9,'ground'],[10,'flying'],[11,'psychic'],[12,'bug'],[13,'rock'],[14,'ghost'],[15,'dragon'],[16,'dark'],[17,'steel'],[18,'fairy']]
 damx = [8,4,2,1,0.5,0.25,0.125,0]
 
-function get_pokename(n) {
+function get_pokemon(n) {
 		for (i = 0; i < poke_list.length; i++) {
             if (poke_list[i][0] == n) {
                 $('#pokename').text(poke_list[i][1]);
+                for (const item of poke_list[i][2]) {
+                	add_types(item);
+                }
             }
         }
 }
 
 
 function pokesearch(n) {
-			
-     jQuery.ajax({
-                type: "GET",
-                url: "https://pokeapi.co/api/v2/pokemon/"+n,
-                cache: false,
-                datatype: "JSON",
-                success: function (obj) {
-                		reset()
-                		get_pokename(n)
-                		$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
-                		//$("#pokeimg").attr("src","official-artwork/"+n+".png")
-                		console.log(obj['types']);
-                		for (const item of obj['types']) {
-                			for (i = 0; i < type_name_eng.length; i++) {
-                				if (type_name_eng[i][1] == item['type']['name']) {
-                					console.log(type_name_eng[i][0]);
-                					add_types(type_name_eng[i][0]);
-                			}
-                		}
-                	}
-
-
-                },
-                error: function (xhr, status, error) {
-                    console.log("ERROR!!!");
-                }
-            });
-            
-        
+	reset()
+	//$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
+	$("#pokeimg").attr("src","official-artwork/"+n+".png")
+	get_pokemon(n)
+  jQuery.ajax({
+    type: "GET",
+    url: "https://pokeapi.co/api/v2/pokemon/"+n,
+    cache: false,
+    datatype: "JSON",
+    success: function (obj) {
+    	console.log(obj['types']);
+    	// 이후 종족값 개체값 가져오기 
+    			
+    		
+    	
+    },
+    error: function (xhr, status, error) {
+        console.log("ERROR!!!");
+    }
+	});     
 }
 
 function damage_calc(n) {
