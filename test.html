@@ -329,11 +329,11 @@ function add_types(n) {
 
 function pokesearch(n) {
 	reset()
-	//$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
+	$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
 
 
 
-	$("#pokeimg").attr("src","official-artwork/"+n+".png")
+	//$("#pokeimg").attr("src","official-artwork/"+n+".png")
 	get_pokemon(n)
   	jQuery.ajax({
     	type: "GET",
@@ -415,17 +415,83 @@ $(function () {
 		add_types(value_temp)		
 	})
 
+
+	/* Container -> Entry , Entry <-> Entry 요소 복사, 이동 */
+	$.event.addProp('dataTransfer');
 	$('#poke_container').on({
 		'dragstart':function(ev) {
-			ev.originalEvent.dataTransfer.setData('text',"poke_container");
+			ev.dataTransfer.setData('text',"poke_container");
 		
 		}
 	});
 
 	$('.entry').on({
 		'dragstart':function(ev) {
-			ev.originalEvent.dataTransfer.setData('text',ev.target.parentNode.id);
+			ev.dataTransfer.setData('text',ev.target.parentNode.id);
+			console.log(ev.target.parentNode.id);
 		
+		},
+		'dragover':function(ev) {
+			ev.preventDefault();
+			//ev.originalEvent.dataTransfer.setData('text',ev.target.parentNode.id);
+		},
+		'drop':function(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			var entry_source = document.getElementById(data);
+
+			// div 선택 시 자식 요소가 선택됩니다. img에 커서를 놓고 드래그 해도 부모가 선택되는 방법이 있을까요?
+
+			// 자식 요소 복사
+			if(data == "poke_container" ) { 
+				var entry_target = ev.target;
+				if (entry_target.id == "pokeimg") {
+					entry_target = ev.target.parentNode;
+					
+				}
+				
+				if (entry_target.nodeName == "DIV" && entry_target.id.substring(0,5) == "entry" ) {
+						if ( entry_target.childNodes.length != 0 ) {
+							entry_target.replaceChildren();
+						
+						}
+						
+						const childNodes = entry_source.childNodes;
+						for ( let item of childNodes) {
+						var test =  item.cloneNode();
+					
+						entry_target.appendChild(test);
+						}
+					}
+			}
+			
+
+			// 자식 요소 교환
+			else {
+				const entry_source = document.getElementById(data);
+				const childNodes = entry_source.childNodes;
+
+				var entry_target = ev.target;
+				if (entry_target.id == "pokeimg") {
+					entry_target = ev.target.parentNode;
+				}	
+				target_childNodes = entry_target.childNodes;
+				
+				child_temp = child_clone(childNodes);
+				child_temp2 = child_clone(target_childNodes);
+
+				entry_source.replaceChildren();
+				entry_target.replaceChildren();
+
+				for ( let item of child_temp2) {
+					entry_source.appendChild(item);
+				}
+
+				for ( let item2 of child_temp) {
+					entry_target.appendChild(item2);
+				}
+
+			}
 		}
 	});
 });
@@ -433,75 +499,7 @@ $(function () {
 
 
 
-/* Container -> Entry , Entry <-> Entry 요소 복사, 이동 */
-function dragEnter(ev) {
-	ev.preventDefault();
-}
 
-function drag(ev) {
-	ev.preventDefault();
-	//ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-	ev.preventDefault();
-	var data = ev.dataTransfer.getData("text")
-	var entry_source = document.getElementById(data);
-
-	// div 선택 시 자식 요소가 선택됩니다. img에 커서를 놓고 드래그 해도 부모가 선택되는 방법이 있을까요?
-
-	// 자식 요소 복사
-	if(data == "poke_container" ) { 
-		var entry_target = ev.target;
-		if (entry_target.id == "pokeimg") {
-			entry_target = ev.target.parentNode;
-			
-		}
-		
-		if (entry_target.nodeName == "DIV" && entry_target.id.substring(0,5) == "entry" ) {
-				if ( entry_target.childNodes.length != 0 ) {
-					entry_target.replaceChildren();
-				
-				}
-				
-				const childNodes = entry_source.childNodes;
-				for ( let item of childNodes) {
-				var test =  item.cloneNode();
-			
-				entry_target.appendChild(test);
-				}
-			}
-	}
-	
-
-	// 자식 요소 교환
-	else {
-		const entry_source = document.getElementById(data);
-		const childNodes = entry_source.childNodes;
-
-		var entry_target = ev.target;
-		if (entry_target.id == "pokeimg") {
-			entry_target = ev.target.parentNode;
-		}	
-		target_childNodes = entry_target.childNodes;
-		
-		child_temp = child_clone(childNodes);
-		child_temp2 = child_clone(target_childNodes);
-
-		entry_source.replaceChildren();
-		entry_target.replaceChildren();
-
-		for ( let item of child_temp2) {
-			entry_source.appendChild(item);
-		}
-
-		for ( let item2 of child_temp) {
-			entry_target.appendChild(item2);
-		}
-
-	}
-	
-}
 
 
 function child_clone(child) {
@@ -575,12 +573,12 @@ function child_clone(child) {
 	<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은 타입만 보기</label>
 </div>
 <div class="myEntry" >
-	<div id="entry1" class="entry"  draggable="true" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
-	<div id="entry2" class="entry"  draggable="true" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
-	<div id="entry3" class="entry"  draggable="true" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
-	<div id="entry4" class="entry"  draggable="true" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
-	<div id="entry5" class="entry"  draggable="true" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
-	<div id="entry6" class="entry"  draggable="true" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
+	<div id="entry1" class="entry"  draggable="true"></div>
+	<div id="entry2" class="entry"  draggable="true"></div>
+	<div id="entry3" class="entry"  draggable="true"></div>
+	<div id="entry4" class="entry"  draggable="true"></div>
+	<div id="entry5" class="entry"  draggable="true"></div>
+	<div id="entry6" class="entry"  draggable="true"></div>
 </div>
 </body>
 </html>
