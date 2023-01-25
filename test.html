@@ -15,15 +15,18 @@ div.def_type {
 	width: 48%;
 }
 
-div.temp {
+div.myEntry {
 	height: auto;
 	border: 1px solid blue; 
 	float: left; 
 	display:flex;
-	justify-content: center;
-	align-items: center;
-	width: 5%;
+	justify-content: left;
+	align-items: left;
+	width: 100%;
+	flex-direction: column;
 }
+
+
 
 #autoInput {
 	width:50%;
@@ -31,7 +34,7 @@ div.temp {
 }
 
 #pokeimg{
-	width: 20%;
+	width: 100%;
 	padding: 5px;
 }
 
@@ -266,17 +269,33 @@ div.temp {
 	border: solid 3px #BD18CE; 
 	color:#FFFFFF; 
 	font-weight:bold; 
-	background:#F7B5F7;ㄹ
+	background:#F7B5F7;
 	border-radius: 3px;
 	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
 }
 
 
+
+.entry {
+	width:80px;
+	height:80px;
+	border: solid 1px black;
+	z-index: 1;
+}
+
+div#poke_container {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      padding: 10px;
+      border: solid 1px brown;
+      /*float: left;*/
+
+}
+
+
 </style>
-<script
-  src="https://code.jquery.com/jquery-3.6.3.js"
-  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script>
 
 // 0 no ,1 fi, 2 wa ,3 gr, 4 el 5 ic , 6fig, 7 po ,8 gro, 9 fl, 10 ps, 11 bu, 12 ro, 13 gh, 14 dr, 15 da, 16 st, 17 fa
@@ -287,6 +306,7 @@ type_name=['노말','불꽃','물','풀','전기','얼음','격투','독','땅',
 type_name_eng=[[1,'normal'],[2,'fire'],[3,'water'],[4,'grass'],[5,'electric'],[6,'ice'],[7,'fighting'],[8,'poison'],[9,'ground'],[10,'flying'],[11,'psychic'],[12,'bug'],[13,'rock'],[14,'ghost'],[15,'dragon'],[16,'dark'],[17,'steel'],[18,'fairy']]
 damx = [8,4,2,1,0.5,0.25,0.125,0]
 
+//poke_list에서 포켓몬 이름, 타입 값 추가
 function get_pokemon(n) {
 		for (i = 0; i < poke_list.length; i++) {
             if (poke_list[i][0] == n) {
@@ -298,27 +318,38 @@ function get_pokemon(n) {
         }
 }
 
+//타입 최대 3개까지 추가
+function add_types(n) {
+ 	if($("span.type").length < 3) {
+				$("#at_type_box").append($("<span id='type_"+n+"' class='type'>"+type_name[n-1]+"</span>"));
+				damage_calc(n);
+				print_result();
+			}
+}
 
 function pokesearch(n) {
 	reset()
-	//$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
-	$("#pokeimg").attr("src","official-artwork/"+n+".png")
+	$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
+
+
+
+	//$("#pokeimg").attr("src","official-artwork/"+n+".png")
 	get_pokemon(n)
-  jQuery.ajax({
-    type: "GET",
-    url: "https://pokeapi.co/api/v2/pokemon/"+n,
-    cache: false,
-    datatype: "JSON",
-    success: function (obj) {
-    	console.log(obj['types']);
-    	// 이후 종족값 개체값 가져오기 
+  	jQuery.ajax({
+    	type: "GET",
+    	url: "https://pokeapi.co/api/v2/pokemon/"+n,
+    	cache: false,
+    	datatype: "JSON",
+    	success: function (obj) {
+    		console.log(obj['types']);
+    		// 이후 종족값 개체값 가져오기 
     			
     		
     	
-    },
-    error: function (xhr, status, error) {
-        console.log("ERROR!!!");
-    }
+    	},
+    	error: function (xhr, status, error) {
+        	console.log("ERROR!!!");
+    	}
 	});     
 }
 
@@ -330,7 +361,7 @@ for (let i = 0; i < result_damage.length; i++){
 result_damage = temp_damage;
 }
 
-	//8 4 2 1 0.5 0.25 0.125 0
+//출력되는 데미지 배율 8 4 2 1 0.5 0.25 0.125 0
 function print_result() {
 	$(".dam").empty();
 	
@@ -342,17 +373,9 @@ function print_result() {
 		}
 	}
 	display_none();
- }
+}
 
- function add_types(n) {
- 	if($("span.type").length < 3) {
-				$("#at_type_box").append($("<span id='type_"+n+"' class='type'>"+type_name[n-1]+"</span>"));
-				damage_calc(n);
-				print_result();
-			}
- }
-
- function display_none() {
+function display_none() {
  	for (const item of damx) {
  		//alert($("div#"+item.toString().replace(/\./g,'_')).children().length);
  		if($("div#"+item.toString().replace(/\./g,'_')).children().length == 0 ) {
@@ -371,19 +394,7 @@ function print_result() {
  		$("div#display_0_125").css("display", "none");
  		$("div#display_0").css("display", "none");
  	}
- }
-
-	$(function () {
-		$('button.type').on('click', function(){
-			value_temp = $(this).val();
-			// alert($("span").length); // °¹¼ö È®ÀÎ 
-			$('#pokename').text('사용자 정의');
-			$("#pokeimg").attr("src","");
-			add_types(value_temp)
-				
-		})
-
-	});
+}
 
 function reset() {
 	$("#pokeimg").attr("src","");
@@ -394,10 +405,112 @@ function reset() {
 	$(".dam").empty();
 	display_none()
 }
-</script>
 
-<link rel="stylesheet" href="css/autocomplete.css">
-<!-- css에는 autocomplet의 요소를 만들떄 필요한 scrpit가 담겨져 있습니다. -->
+$(function () {
+	$('button.type').on('click', function(){
+		value_temp = $(this).val();
+		// alert($("span").length); // 
+		$('#pokename').text('사용자 정의');
+		$("#pokeimg").attr("src","");
+		add_types(value_temp)		
+	})
+
+
+	/* Container -> Entry , Entry <-> Entry 요소 복사, 이동 */
+	$.event.addProp('dataTransfer');
+	$('#poke_container').on({
+		'dragstart':function(ev) {
+			ev.dataTransfer.setData('text',"poke_container");
+		
+		}
+	});
+
+	$('.entry').on({
+		'dragstart':function(ev) {
+			ev.dataTransfer.setData('text',ev.target.parentNode.id);
+			console.log(ev.target.parentNode.id);
+		
+		},
+		'dragover':function(ev) {
+			ev.preventDefault();
+			//ev.originalEvent.dataTransfer.setData('text',ev.target.parentNode.id);
+		},
+		'drop':function(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			var entry_source = document.getElementById(data);
+
+			// div 선택 시 자식 요소가 선택됩니다. img에 커서를 놓고 드래그 해도 부모가 선택되는 방법이 있을까요?
+
+			// 자식 요소 복사
+			if(data == "poke_container" ) { 
+				var entry_target = ev.target;
+				if (entry_target.id == "pokeimg") {
+					entry_target = ev.target.parentNode;
+					
+				}
+				
+				if (entry_target.nodeName == "DIV" && entry_target.id.substring(0,5) == "entry" ) {
+						if ( entry_target.childNodes.length != 0 ) {
+							entry_target.replaceChildren();
+						
+						}
+						
+						const childNodes = entry_source.childNodes;
+						for ( let item of childNodes) {
+						var test =  item.cloneNode();
+					
+						entry_target.appendChild(test);
+						}
+					}
+			}
+			
+
+			// 자식 요소 교환
+			else {
+				const entry_source = document.getElementById(data);
+				const childNodes = entry_source.childNodes;
+
+				var entry_target = ev.target;
+				if (entry_target.id == "pokeimg") {
+					entry_target = ev.target.parentNode;
+				}	
+				target_childNodes = entry_target.childNodes;
+				
+				child_temp = child_clone(childNodes);
+				child_temp2 = child_clone(target_childNodes);
+
+				entry_source.replaceChildren();
+				entry_target.replaceChildren();
+
+				for ( let item of child_temp2) {
+					entry_source.appendChild(item);
+				}
+
+				for ( let item2 of child_temp) {
+					entry_target.appendChild(item2);
+				}
+
+			}
+		}
+	});
+});
+
+
+
+
+
+
+
+function child_clone(child) {
+	var child_node = [];
+	for ( let item of child) {
+		child_node.push(item.cloneNode());
+	}
+	return child_node;
+}
+
+</script>
 <script type="text/javascript" src="autocomplate.js"></script>
 <!-- css에는 autocomplet의 요소의 샘플 json의 값이 담겨져 있습니다. -->
 <script type="text/javascript" src="poke_list.js"></script>
@@ -409,10 +522,14 @@ function reset() {
     </script>
 </head>
 <body>
-<div class="at_type">
-	<h1>포켓몬 : <strong id=pokename></strong></h1>
-	<img id=pokeimg onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png'">
-	<!-- <img id=pokeimg onerror="this.src='poke-ball.png'"> -->
+	<div class="at_type">
+		<h1>포켓몬 : <strong id=pokename></strong></h1>
+		<div id="poke_container" draggable="true"  >
+			<!--<img id="pokeimg" onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png'">-->
+		<img id=pokeimg onerror="this.src='poke-ball.png'">
+			<input type="hidden" name="test_name" value="test_value">
+		<!-- 이곳에 포켓몬 정보를 넣습니다. 어떤 형태로 넣을지는 생각 -->
+		</div>
 	<p>search input</p>
 	<div class="srch_form autocomplete">
         <input id="autoInput" placeholder="Search...">
@@ -454,6 +571,14 @@ function reset() {
 	<div id="display_0_125" style="display: none;"><h3>(0.125배)</h3><div id="0_125" class="dam"></div></div>
 	<div id="display_0" style="display: none;"><h3>(0배)</h3><div id="0" class="dam"></div></div>
 	<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은 타입만 보기</label>
+</div>
+<div class="myEntry" >
+	<div id="entry1" class="entry"  draggable="true"></div>
+	<div id="entry2" class="entry"  draggable="true"></div>
+	<div id="entry3" class="entry"  draggable="true"></div>
+	<div id="entry4" class="entry"  draggable="true"></div>
+	<div id="entry5" class="entry"  draggable="true"></div>
+	<div id="entry6" class="entry"  draggable="true"></div>
 </div>
 </body>
 </html>
