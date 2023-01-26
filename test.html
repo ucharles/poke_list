@@ -1,6 +1,10 @@
 <html>
 <head>
 <style>
+div.box { 
+	width:100%;
+	overflow:auto;
+}
 div.at_type {
 	height: auto;
 	border: 1px solid gold; 
@@ -275,14 +279,6 @@ div.myEntry {
 }
 
 
-
-.entry {
-	width:80px;
-	height:80px;
-	border: solid 1px black;
-	z-index: 1;
-}
-
 div#poke_container {
       width: 100px;
       height: 100px;
@@ -293,6 +289,48 @@ div#poke_container {
 
 }
 
+div.myEntry {
+width:auto;
+border: solid 1px blue;
+float:left;
+}
+
+.entry {
+	width:80px;
+	height:80px;
+	border: solid 1px black;
+float:left;
+}
+
+#myEntry_info {
+width:40%;
+height:492px;
+border: solid 1px red;
+float:left;
+}
+
+.myEntry div.on {
+  background-color: #ffb715;
+  font-weight: bold;
+}
+
+.cont {
+display:none; 
+//background:#555; 
+//color:#fff; 
+text-align:center; 
+height: 100%;
+//line-height:100px;
+}
+
+#poke_container_info {
+position: absolute;
+top:10px;
+left:160px;
+background:#555; 
+text-align:center; 
+padding:50px;
+}
 
 </style>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -407,6 +445,36 @@ function reset() {
 }
 
 $(function () {
+
+	$("#poke_container").click(function() {
+		if ( $("#poke_container").hasClass("on") == true ) {
+			$("#poke_container").removeClass("on");
+    			$("#poke_container_info").hide();
+		}
+		else {	
+			$("#poke_container").addClass("on");
+			$("#poke_container_info").show();
+		}
+   		
+  	})
+
+
+	$(".myEntry div").click(function() {
+    		var idx = $(this).index();
+		
+		if ( $(".myEntry div").eq(idx).hasClass("on") != true ) {
+    			$(".myEntry div").removeClass("on");
+			$(".myEntry div").eq(idx).addClass("on");
+			$("#myEntry_info> div").hide();
+			$("#myEntry_info> div").eq(idx).show();
+    		}
+		else {
+			$(".myEntry div").removeClass("on");
+			$("#myEntry_info> div").hide();
+		}
+   		
+  	})
+
 	$('button.type').on('click', function(){
 		value_temp = $(this).val();
 		// alert($("span").length); // 
@@ -522,6 +590,7 @@ function child_clone(child) {
     </script>
 </head>
 <body>
+<div class="box">
 	<div class="at_type">
 		<h1>포켓몬 : <strong id=pokename></strong></h1>
 		<div id="poke_container" draggable="true"  >
@@ -530,6 +599,9 @@ function child_clone(child) {
 			<input type="hidden" name="test_name" value="test_value">
 		<!-- 이곳에 포켓몬 정보를 넣습니다. 어떤 형태로 넣을지는 생각 -->
 		</div>
+		 <div id="poke_container_info" style="display:none;">
+        			</br>포켓몬 이름(display name)</br>Lv</br>타입</br>종족값</br>개체치</br>노력치</br>성격</br>특성</br>지닌물건</br>기술1</br>기술2</br>기술3</br>기술4</br>테라스탈타입(SV)
+      		 </div>
 	<p>search input</p>
 	<div class="srch_form autocomplete">
         <input id="autoInput" placeholder="Search...">
@@ -572,6 +644,8 @@ function child_clone(child) {
 	<div id="display_0" style="display: none;"><h3>(0배)</h3><div id="0" class="dam"></div></div>
 	<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은 타입만 보기</label>
 </div>
+</div>
+<div class="box">
 <div class="myEntry" >
 	<div id="entry1" class="entry"  draggable="true"></div>
 	<div id="entry2" class="entry"  draggable="true"></div>
@@ -579,6 +653,28 @@ function child_clone(child) {
 	<div id="entry4" class="entry"  draggable="true"></div>
 	<div id="entry5" class="entry"  draggable="true"></div>
 	<div id="entry6" class="entry"  draggable="true"></div>
+</div>
+<div id=myEntry_info>
+      <div id="tab1" class="cont" style="display:block;">
+        </br>포켓몬 이름(display name)</br>Lv</br>타입</br>종족값</br>개체치</br>노력치</br>성격</br>특성</br>지닌물건</br>기술1</br>기술2</br>기술3</br>기술4</br>테라스탈타입(SV)
+      </div>
+      <div id="tab2" class="cont">
+        Tab Content2
+      </div>
+      <div id="tab3" class="cont">
+        Tab Content3
+      </div>
+	<div id="tab4" class="cont">
+        Tab Content4
+      </div>
+	<div id="tab5" class="cont">
+        Tab Content5
+      </div>
+	<div id="tab6" class="cont">
+        Tab Content6
+      </div>
+
+</div>
 </div>
 </body>
 </html>
