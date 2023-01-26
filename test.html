@@ -392,11 +392,19 @@ function pokesearch(n) {
 }
 
 function damage_calc(n) {
-const temp_damage = []
-for (let i = 0; i < result_damage.length; i++){
-  temp_damage.push(type_damage[n-1][i] * result_damage[i]);
-}
-result_damage = temp_damage;
+	const temp_damage = []
+	if( n > 0 ) {
+		for (let i = 0; i < result_damage.length; i++){
+			  temp_damage.push(type_damage[n-1][i] * result_damage[i]);
+		}
+	}
+	else {
+		for (let i = 0; i < result_damage.length; i++){
+			  temp_damage.push(result_damage[i] / type_damage[Math.abs(n)-1][i]);
+		}
+	}
+	
+	result_damage = temp_damage;
 }
 
 //출력되는 데미지 배율 8 4 2 1 0.5 0.25 0.125 0
@@ -445,6 +453,15 @@ function reset() {
 }
 
 $(function () {
+	$(document).on("click", "#at_type_box > span", function() {
+		remove_type = ($(this).attr("id").split('_')[1] * -1);
+		$(this).remove();
+		damage_calc(remove_type);
+		print_result();
+		if($("span.type").length == 0) {
+			reset()
+		}
+     });
 
 	$("#poke_container").click(function() {
 		if ( $("#poke_container").hasClass("on") == true ) {
@@ -604,7 +621,20 @@ function child_clone(child) {
 		<!-- 이곳에 포켓몬 정보를 넣습니다. 어떤 형태로 넣을지는 생각 -->
 		</div>
 		 <div id="poke_container_info" style="display:none;">
-        			</br>포켓몬 이름(display name)</br>Lv</br>타입</br>종족값</br>개체치</br>노력치</br>성격</br>특성</br>지닌물건</br>기술1</br>기술2</br>기술3</br>기술4</br>테라스탈타입(SV)
+		 			포켓몬 이름(display name) <input type="text" name="display_name" value=""></br>
+        			Lv <input type="text" name="level" value=""></br>
+        			타입 <input type="text" name="type1" value=""><input type="text" name="type2" value=""></br>
+        			종족값 <input type="text" name="base_H" value=""><input type="text" name="base_A" value=""><input type="text" name="base_B" value=""><input type="text" name="base_C" value=""><input type="text" name="base_D" value=""><input type="text" name="base_S" value=""></br>
+        			개체치 <input type="text" name="iv_H" value=""><input type="text" name="iv_A" value=""><input type="text" name="iv_B" value=""><input type="text" name="iv_C" value=""><input type="text" name="iv_D" value=""><input type="text" name="iv_S" value=""></br>
+        			노력치 <input type="text" name="ev_H" value=""><input type="text" name="ev_A" value=""><input type="text" name="ev_B" value=""><input type="text" name="ev_C" value=""><input type="text" name="ev_D" value=""><input type="text" name="ev_S" value=""></br>
+        			성격 <input type="text" name="nature" value=""></br>
+        			특성 <input type="text" name="ability" value=""></br>
+        			지닌물건 <input type="text" name="holditem" value=""></br>
+        			기술1 <input type="text" name="move1" value=""></br>
+        			기술2 <input type="text" name="move2" value=""></br>
+        			기술3 <input type="text" name="move3" value=""></br>
+        			기술4 <input type="text" name="move4" value=""></br>
+        			테라스탈타입(SV) <input type="text" name="terrtype" value="">
       		 </div>
 	<p>search input</p>
 	<div class="srch_form autocomplete">
