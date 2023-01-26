@@ -495,8 +495,12 @@ $(function () {
 
 	$('.entry').on({
 		'dragstart':function(ev) {
-			ev.dataTransfer.setData('text',ev.target.parentNode.id);
-			console.log(ev.target.parentNode.id);
+			if(ev.target.id.substring(0,5) != "entry"){
+				ev.dataTransfer.setData('text',ev.target.parentNode.id);
+			}
+			else {
+				ev.dataTransfer.setData('text',ev.target.id);
+			}
 		
 		},
 		'dragover':function(ev) {
