@@ -1,0 +1,64 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+<script>
+function loadentry(n) {
+	entry_list = JSON.parse(localStorage.getItem('container'+n));
+	if(entry_list != null ){
+		Object.keys(entry_list).forEach(function(key){
+			$('#entry'+n+' > input[name='+key+']').attr('value',entry_list[key]);
+			//console.log('#entry'+n+' > input[name='+key+']');
+		});
+	}
+}
+
+$(function () {
+
+	loadentry(1);
+	loadentry(2);
+
+	$("#box > div > input").change(function(){
+		parent_id = $(this).parent().attr('id');
+		test_list = JSON.parse(localStorage.getItem(parent_id));
+		console.log(test_list);
+		if (test_list == null) {
+			let test_list = {
+				test1:'0',
+				test2:'0',
+				test3:1
+			}
+		}
+		
+    		for (const item of $("#"+parent_id).children()) {
+			test_list[item.name] = item.value;
+		}	
+		console.log(test_list);
+		localStorage.setItem(parent_id, JSON.stringify(test_list));
+		loadentry(parent_id[9]);
+	});
+});
+</script>
+</head>
+<body>
+<h1>Get LocalStorage</h1>
+<div id="entry1">
+<input type="text" name="test1"> 
+<input type="text" name="test2"> 
+</div>
+<div id="entry2">
+<input type="text" name="test1"> 
+<input type="text" name="test2"> 
+</div>
+<h1>Set LocalStorage</h1>
+<div id="box">
+<div id="container1">
+<input type="text" name="test1"> 
+<input type="text" name="test2"> 
+</div>
+<div id="container2">
+<input type="text" name="test1"> 
+<input type="text" name="test2"> 
+</div>
+</div>
+</body>
+</html>
