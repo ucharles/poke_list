@@ -1,31 +1,30 @@
 <html>
 <head>
 <style>
+div.box { 
+  	display: -webkit-flex;
+  	display: flex;
+	border: solid #6AC5AC 1px;
+}
 div.at_type {
-	height: auto;
 	border: 1px solid gold; 
-	float: left; 
 	width: 48%;
 }
 
 div.def_type {
-	height: auto;
+	-webkit-flex: 1;
+          	flex: 1;
 	border: 1px solid red; 
-	float: right; 
-	width: 48%;
 }
 
 div.myEntry {
-	height: auto;
 	border: 1px solid blue; 
 	float: left; 
 	display:flex;
 	justify-content: left;
 	align-items: left;
-	width: 100%;
 	flex-direction: column;
 }
-
 
 
 #autoInput {
@@ -275,14 +274,6 @@ div.myEntry {
 }
 
 
-
-.entry {
-	width:80px;
-	height:80px;
-	border: solid 1px black;
-	z-index: 1;
-}
-
 div#poke_container {
       width: 100px;
       height: 100px;
@@ -294,9 +285,58 @@ div#poke_container {
 }
 
 
+.entry {
+	width:80px;
+	height:80px;
+	border: solid 1px black;
+float:left;
+}
+
+#myEntry_info {
+width:40%;
+border: solid 1px red;
+float:left;
+}
+
+.myEntry div.on {
+  background-color: #ffb715;
+  font-weight: bold;
+}
+
+.cont {
+display:none; 
+text-align:center; 
+height: 100%;
+}
+
+#poke_container_info {
+position: absolute;
+top:10px;
+left:160px;
+background:#555; 
+text-align:center; 
+padding:50px;
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script>
+
+let poke_info = {
+	//VGC Calc 형식에 따라 변화할 수 있음.
+	dex:-1,
+	name:"사용자 정의",
+	lv:1,
+	type:[],
+	base:[0,0,0,0,0,0],
+	iv:[0,0,0,0,0,0],
+	ev:[0,0,0,0,0,0],
+	nature:0,
+	ability:'',
+	holditem:'',
+	move:['test','test','test','test'],
+	terratype:0
+}
 
 // 0 no ,1 fi, 2 wa ,3 gr, 4 el 5 ic , 6fig, 7 po ,8 gro, 9 fl, 10 ps, 11 bu, 12 ro, 13 gh, 14 dr, 15 da, 16 st, 17 fa
 const type_damage = [[1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1],[1,0.5,2,0.5,1,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5],[1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1],[1,2,0.5,0.5,0.5,2,1,2,0.5,2,1,2,1,1,1,1,1,1],[1,1,1,1,0.5,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1],[1,2,1,1,1,0.5,2,1,1,1,1,1,2,1,1,1,2,1],[1,1,1,1,1,1,1,1,1,2,2,0.5,0.5,1,1,0.5,1,2],[1,1,1,0.5,1,1,0.5,0.5,2,1,2,0.5,1,1,1,1,1,0.5],[1,1,2,2,0,2,1,0.5,1,1,1,1,0.5,1,1,1,1,1],[1,1,1,0.5,2,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1],[1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1],[1,2,1,0.5,1,1,0.5,1,0.5,2,1,1,2,1,1,1,1,1],[0.5,0.5,2,2,1,1,2,0.5,2,0.5,1,1,1,1,1,1,2,1],[0,1,1,1,1,1,0,0.5,1,1,1,0.5,1,2,1,2,1,1],[1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2],[1,1,1,1,1,1,2,1,1,1,0,2,11,0.5,1,0.5,1,2],[0.5,2,1,0.5,1,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5],[1,1,1,1,1,1,0.5,2,1,1,1,0.5,1,1,0,0.5,2,1]];
@@ -317,10 +357,13 @@ function get_pokemon(n) {
             }
         }
 }
-
 //타입 최대 3개까지 추가
 function add_types(n) {
  	if($("span.type").length < 3) {
+				poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
+				poke_data_temp['type'].push(n);
+				$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
+				
 				$("#at_type_box").append($("<span id='type_"+n+"' class='type'>"+type_name[n-1]+"</span>"));
 				damage_calc(n);
 				print_result();
@@ -353,12 +396,47 @@ function pokesearch(n) {
 	});     
 }
 
-function damage_calc(n) {
-const temp_damage = []
-for (let i = 0; i < result_damage.length; i++){
-  temp_damage.push(type_damage[n-1][i] * result_damage[i]);
+
+/* 
+엔트리 포켓몬과 타입 상성 비교.(예정) 
+1. 상성 여부 확인 (내 물리/특수 기술이 -> 상대 타입을 찌를 수 있는가)
+2. 역상성 확인(상대의 모든 물리/특수 기술 -> 내 타입을 찌를수 있는가,비자속 4배, 자속 2배)
+3. 상대의 기술을 등록했을 경우 (상대방의 물리/특수 기술이 -> 내 타입을 찌를수 있는가)
+
+판단 기준 3단계(유리/경고/불리)
+유리 -> 1
+경고 -> 1, 2 or 3
+불리 -> 2 or 3
+*/
+
+function type_compare() { 
+	for (i=1;i<=6;i++) {
+		entry_data = $("#entry"+i+" > input[name=poke_data]").val();
+		if( entry_data !== undefined) {
+			entry_type_data = JSON.parse(entry_data);
+			for(const item of entry_type_data['type']) {
+				if(result_damage[item-1] >= 2) {
+					console.log("entry"+i+" is strong");
+				}
+			}
+		}
+	}
 }
-result_damage = temp_damage;
+
+function damage_calc(n) {
+	const temp_damage = []
+	if( n > 0 ) {
+		for (let i = 0; i < result_damage.length; i++){
+			  temp_damage.push(type_damage[n-1][i] * result_damage[i]);
+		}
+	}
+	else {
+		for (let i = 0; i < result_damage.length; i++){
+			  temp_damage.push(result_damage[i] / type_damage[Math.abs(n)-1][i]);
+		}
+	}
+	
+	result_damage = temp_damage;
 }
 
 //출력되는 데미지 배율 8 4 2 1 0.5 0.25 0.125 0
@@ -397,6 +475,9 @@ function display_none() {
 }
 
 function reset() {
+	poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
+	poke_data_temp['type'] = [];	
+	$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
 	$("#pokeimg").attr("src","");
 	$("#autoInput").val("");
 	$("#at_type_box").empty();
@@ -407,6 +488,50 @@ function reset() {
 }
 
 $(function () {
+	$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_info));
+
+	$(document).on("click", "#at_type_box > span", function() {
+		remove_type = ($(this).attr("id").split('_')[1] * -1);
+		poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
+		poke_data_temp['type'].splice(poke_data_temp['type'].indexOf(remove_type))		
+				$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
+		$(this).remove();
+		damage_calc(remove_type);
+		print_result();
+		if($("span.type").length == 0) {
+			reset()
+		}
+     });
+
+	$("#poke_container").click(function() {
+		if ( $("#poke_container").hasClass("on") == true ) {
+			$("#poke_container").removeClass("on");
+    			$("#poke_container_info").hide();
+		}
+		else {	
+			$("#poke_container").addClass("on");
+			$("#poke_container_info").show();
+		}
+   		
+  	})
+
+
+	$(".myEntry div").click(function() {
+    		var idx = $(this).index();
+		
+		if ( $(".myEntry div").eq(idx).hasClass("on") != true ) {
+    			$(".myEntry div").removeClass("on");
+			$(".myEntry div").eq(idx).addClass("on");
+			$("#myEntry_info> div").hide();
+			$("#myEntry_info> div").eq(idx).show();
+    		}
+		else {
+			$(".myEntry div").removeClass("on");
+			$("#myEntry_info> div").hide();
+		}
+   		
+  	})
+
 	$('button.type').on('click', function(){
 		value_temp = $(this).val();
 		// alert($("span").length); // 
@@ -427,8 +552,12 @@ $(function () {
 
 	$('.entry').on({
 		'dragstart':function(ev) {
-			ev.dataTransfer.setData('text',ev.target.parentNode.id);
-			console.log(ev.target.parentNode.id);
+			if(ev.target.id.substring(0,5) != "entry"){
+				ev.dataTransfer.setData('text',ev.target.parentNode.id);
+			}
+			else {
+				ev.dataTransfer.setData('text',ev.target.id);
+			}
 		
 		},
 		'dragover':function(ev) {
@@ -441,14 +570,19 @@ $(function () {
 			var entry_source = document.getElementById(data);
 
 			// div 선택 시 자식 요소가 선택됩니다. img에 커서를 놓고 드래그 해도 부모가 선택되는 방법이 있을까요?
+			var entry_target = ev.target;
 
+			if (entry_target.id == "pokeimg") {
+				entry_target = ev.target.parentNode;
+			}	
+
+			if (data === entry_target.id) {
+				//console.log('sourceid == targetid => exit;');
+				return;
+			}
+			
 			// 자식 요소 복사
 			if(data == "poke_container" ) { 
-				var entry_target = ev.target;
-				if (entry_target.id == "pokeimg") {
-					entry_target = ev.target.parentNode;
-					
-				}
 				
 				if (entry_target.nodeName == "DIV" && entry_target.id.substring(0,5) == "entry" ) {
 						if ( entry_target.childNodes.length != 0 ) {
@@ -471,10 +605,6 @@ $(function () {
 				const entry_source = document.getElementById(data);
 				const childNodes = entry_source.childNodes;
 
-				var entry_target = ev.target;
-				if (entry_target.id == "pokeimg") {
-					entry_target = ev.target.parentNode;
-				}	
 				target_childNodes = entry_target.childNodes;
 				
 				child_temp = child_clone(childNodes);
@@ -522,14 +652,29 @@ function child_clone(child) {
     </script>
 </head>
 <body>
+<div class="box">
 	<div class="at_type">
 		<h1>포켓몬 : <strong id=pokename></strong></h1>
 		<div id="poke_container" draggable="true"  >
-			<!--<img id="pokeimg" onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png'">-->
 		<img id=pokeimg onerror="this.src='poke-ball.png'">
-			<input type="hidden" name="test_name" value="test_value">
-		<!-- 이곳에 포켓몬 정보를 넣습니다. 어떤 형태로 넣을지는 생각 -->
+			<input type="hidden" name="poke_data" value="" >
 		</div>
+		 <div id="poke_container_info" style="display:none;">
+		 			포켓몬 이름(display name) <input type="text" name="display_name" value=""></br>
+        			Lv <input type="text" name="level" value=""></br>
+        			타입 <input type="text" name="type1" value=""><input type="text" name="type2" value=""></br>
+        			종족값 <input type="text" name="base_H" value=""><input type="text" name="base_A" value=""><input type="text" name="base_B" value=""><input type="text" name="base_C" value=""><input type="text" name="base_D" value=""><input type="text" name="base_S" value=""></br>
+        			개체치 <input type="text" name="iv_H" value=""><input type="text" name="iv_A" value=""><input type="text" name="iv_B" value=""><input type="text" name="iv_C" value=""><input type="text" name="iv_D" value=""><input type="text" name="iv_S" value=""></br>
+        			노력치 <input type="text" name="ev_H" value=""><input type="text" name="ev_A" value=""><input type="text" name="ev_B" value=""><input type="text" name="ev_C" value=""><input type="text" name="ev_D" value=""><input type="text" name="ev_S" value=""></br>
+        			성격 <input type="text" name="nature" value=""></br>
+        			특성 <input type="text" name="ability" value=""></br>
+        			지닌물건 <input type="text" name="holditem" value=""></br>
+        			기술1 <input type="text" name="move1" value=""></br>
+        			기술2 <input type="text" name="move2" value=""></br>
+        			기술3 <input type="text" name="move3" value=""></br>
+        			기술4 <input type="text" name="move4" value=""></br>
+        			테라스탈타입(SV) <input type="text" name="terrtype" value="">
+      		 </div>
 	<p>search input</p>
 	<div class="srch_form autocomplete">
         <input id="autoInput" placeholder="Search...">
@@ -572,6 +717,11 @@ function child_clone(child) {
 	<div id="display_0" style="display: none;"><h3>(0배)</h3><div id="0" class="dam"></div></div>
 	<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은 타입만 보기</label>
 </div>
+</div>
+<div class="box">
+결과를 출력함
+</div>
+<div class="box">
 <div class="myEntry" >
 	<div id="entry1" class="entry"  draggable="true"></div>
 	<div id="entry2" class="entry"  draggable="true"></div>
@@ -579,6 +729,28 @@ function child_clone(child) {
 	<div id="entry4" class="entry"  draggable="true"></div>
 	<div id="entry5" class="entry"  draggable="true"></div>
 	<div id="entry6" class="entry"  draggable="true"></div>
+</div>
+<div id=myEntry_info>
+      <div id="tab1" class="cont" style="display:none;">
+        </br>포켓몬 이름(display name)</br>Lv</br>타입</br>종족값</br>개체치</br>노력치</br>성격</br>특성</br>지닌물건</br>기술1</br>기술2</br>기술3</br>기술4</br>테라스탈타입(SV)
+      </div>
+      <div id="tab2" class="cont">
+        Tab Content2
+      </div>
+      <div id="tab3" class="cont">
+        Tab Content3
+      </div>
+	<div id="tab4" class="cont">
+        Tab Content4
+      </div>
+	<div id="tab5" class="cont">
+        Tab Content5
+      </div>
+	<div id="tab6" class="cont">
+        Tab Content6
+      </div>
+
+</div>
 </div>
 </body>
 </html>
