@@ -1,104 +1,18 @@
 "use client";
 import { useState } from "react";
+// showdown 종속
+// npm install @pkmn/data
+// npm install @pkmn/dex
+import { Dex } from "@pkmn/dex";
+import { Generations } from "@pkmn/data";
+import { RBY_PATCH, GSC_PATCH } from "./gen_list.js";
 
 export default function test() {
   // 자동 완성 리스트 샘플
 
-  // 세대별 포켓몬 리스트 예제 https://github.com/limelee85/poke_list/issues/5 이슈로 인해 바꿔야함
-  const RBY = [
-    {
-      name: {
-        ko: "캐이시",
-        en: "Abra",
-      },
-      image: {
-        default:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
-        shiny:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/63.png",
-      },
-      types: ["Psychic"],
-      bs: {
-        hp: 25,
-        at: 20,
-        df: 15,
-        sp: 90,
-        sl: 105,
-      },
-      weightkg: 19.5,
-      nfe: true,
-    },
-    {
-      name: {
-        ko: "주뱃",
-        en: "Zubat",
-      },
-      image: {
-        default:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
-        shiny:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/41.png",
-      },
-      types: ["Poison", "Flying"],
-      bs: {
-        hp: 40,
-        at: 45,
-        df: 35,
-        sp: 55,
-        sl: 40,
-      },
-      weightkg: 7.5,
-      nfe: true,
-    },
-  ];
-
-  const GSC_patch = [
-    {
-      name: {
-        ko: "에이팜",
-        en: "Aipom",
-      },
-      image: {
-        default:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/190.png",
-        shiny:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/190.png",
-      },
-      types: ["Normal"],
-      bs: {
-        hp: 55,
-        at: 70,
-        df: 55,
-        sa: 40,
-        sd: 55,
-        sp: 85,
-      },
-      weightkg: 11.5,
-    },
-    {
-      name: {
-        ko: "왕자리",
-        en: "Yanma",
-      },
-      image: {
-        default:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/193.png",
-        shiny:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/193.png",
-      },
-      types: ["Bug", "Flying"],
-      bs: {
-        hp: 65,
-        at: 65,
-        df: 45,
-        sa: 75,
-        sd: 45,
-        sp: 95,
-      },
-      weightkg: 38,
-    },
-  ];
-
+  // 세대별 포켓몬 리스트 예제 
+  // https://github.com/limelee85/poke_list/issues/5 이슈로 2세대까지 임시적용
+  // SWSH_patch , SV_patch 삭제해야함
   const SWSH_patch = [
     {
       name: {
@@ -140,7 +54,31 @@ export default function test() {
     },
   ];
 
-  const GSC = RBY.concat(GSC_patch);
+  // showdown calculator와 병합
+  /*
+  showdown 포켓몬 정보 : gens.get([세대]).species.get([포켓몬 영문 명]) 으로 특정 세대에서의 포켓몬 정보를 호출 가능 (타입 외에도 특성 등의 여러 정보 포함되어 있음)
+  [세대]_PATCH Array를 순회하면서 showdown 포켓몬 정보 , [세대]_PATCH 포켓몬 정보를 merge 한 객체를 새로운 객체에 저장
+  새로운 객체는 result Array의 요소로 추가
+  */
+  function CreateGenList(gen_list, gen) {
+    const result = [];
+    for (const key in gen_list) {
+      result.push(
+        Object.assign(
+          {},
+          gens.get(gen).species.get(gen_list[key].name.en),
+          gen_list[key]
+        )
+      );
+    }
+
+    return result;
+  }
+
+  // 검색에 사용할 Array 생성
+  const gens = new Generations(Dex);
+  const RBY = CreateGenList(RBY_PATCH, 1);
+  const GSC = CreateGenList(RBY_PATCH.concat(GSC_PATCH), 2);
   const ADV = GSC;
   const DPP = GSC;
   const BW = GSC;
@@ -205,9 +143,11 @@ export default function test() {
     switch (str) {
       case "RBY":
         setpokemons(RBY);
+        console.log(pokemons);
         break;
       case "GSC":
         setpokemons(GSC);
+        console.log(pokemons);
         break;
       case "ADV":
         setpokemons(ADV);
