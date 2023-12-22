@@ -1,11 +1,14 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
+
 // showdown 종속
 // npm install @pkmn/data
 // npm install @pkmn/dex
 import { Dex } from "@pkmn/dex";
 import { Generations } from "@pkmn/data";
 import { GetPATCH, TYPE_LIST } from "./poke_data.js";
+import PokeTypeIcon from "./components/PokeTypeIcon.js";
 
 export default function test() {
   // 자동 완성 리스트 샘플
@@ -162,7 +165,7 @@ export default function test() {
     }
   }
 
-  const [pokemons, setpokemons] = useState(SV);
+  //const [pokemons, setpokemons] = useState(SV);
   const [search, setSearch] = useState("");
   const [isHidden, setIsHidden] = useState(true);
   const [inputVal, setInputVal] = useState("");
@@ -208,7 +211,7 @@ export default function test() {
               className="absolute top-14 w-full top-13 bg-white p-4 rounded"
               hidden={isHidden}
             >
-              {pokemons.map((pokemon, idx) => (
+              {/* {pokemons?.map((pokemon, idx) => (
                 <li
                   className="border-b p-1.5 font-sans list"
                   key={idx}
@@ -229,103 +232,32 @@ export default function test() {
                 >
                   {pokemon.name.ko}
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
         </div>
       </div>
-      <div className="my-2 max-w-4xl w-full items-center border-b font-mono text-sm border-b border-gray-300 dark:from-inherit rounded-xl border bg-gray-200 p-8 ">
-        <div className="columns-6 items-center p-8">
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/PvuSMZHqqYF5bQh4sITdAnPUoo0S4jBEPjvBaodNQtGPROloYolcRGHoqjbY4rTXrJIb-ZdxIIhfNLLR7hMk4Q.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/8nOpldWx5jLLBcAEFFKHHOhd4_vcw0SJzHLD9tiqeQNzp9cevirxnAaDd0EbjCfk3LVxk3oh5AMVA2vaZpLi9g.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/GcxOX2msC0JJ-ssiaJI70AN1ktJX4UD-XUxfjzRv2Z-gUvUUHxx2DOPPF6vL02PVcoOn7UFhjOHPi2MaxmN2eA.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/hOFwA0dZpmzHTUvsg4ptvdokqANSm7qX5s01Dy6a2BBxK8SYzvw37xuPdrlCBFNUsiDPqWntPsPfPeuJKo4WRA.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/8V52U_V38m3E6iiimx1h1NSzIM8toPd2nuh9cYXbwTPCXG5qiLJ7jRGjEgIVdy5tuydh5gyNL1pcXqTXZo28gg.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/cEdS9oG0iXtMyZhuFamomjJaLGR20gXmAB3U28yi4AelnF3P4etdx0tV97vPN6iLgnLBaj6ApZG69EqcwhP10Q.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/uYT9A9vFWlyqYN86w3OANACZPcgpXJGuqxrgrW4qP-XYthk_N4oktsPNvgkzDnd9ystnuicuIf8RxNb1oZTSgg.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/uPBrWwVYRDlpZRlF-rT5pdQ53Dy2Uzbv3MQg59_43n5d8FuEI-BYN5uq3HwX4Z9eh24LWfE-8pkcWERkMKUSDQ.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/eoX1h3NPRtqwEUyEAgod6J8z7JPlzP84rSeNRQ86QqQdwXVCf3Z4FWvP2-cJEF-3OufxLRVnEf2QtJfVvWYluQ.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/a1JChrvl-OxuL37fI7uC1UHKPgbxGPmG3j3_7TZ896QysGtR5cPPqyY9fZr7asNYZMLBThYK0XlbYc-86PXzqw.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/PDzju64FSedcuC5m3cvq-4X_pDRgkxl_ymN9-KfHmQpB4LR_PhuNSP5HvBgNrlO9yTMfbsB6suxyz_1ExK_WLg.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/PqnieDvvQVHJg-DVSQfAt2uz9HcxwNbjCEO2IkppusliQQZNi1Wozx16tEPAS4avGWd9j3wtq0YVZ5Kp70gNYA.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/hQxHwmMpK9JyNHHitq9xSLEtkcyQgqLYlrFq3UHiSxd_-OphyJs_YC5yvbcOhCok31gaVbURtaB_0Eup9UoTXg.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/OOj_uG7ozAmaxP-E7W8mIG6SU6KwowqOlYNURQ4hulaT3oKVaiMrjoxK1Ox1k8oTUY6YKLsQgVmBURAhvnvPnw.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/N0N6QlMWx3TRhx3g1jcHCU-g8Hp6Ih58MoN6lnEnzTIX0bcOxw-S7RxdF5rMQfsSNimgv-wxL0_1OpXHaknxmA.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/6tKSV0yEIOdKNKblkkcwRN8fmElmRfmUrRXeqdHwJ1lq0k6td0hR0DPeCpUxLP1X_G0w3dy9WfZl7_q_dvMk8w.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/80YtbGPxyMBVuBbcCjM4XcLlDW9tuPho4LJOqez0PqsjqPrt-6_W3GGhU1g4FRAjlEjoG86n7vThUs4FwWz_mg.svg"
-            width="50"
-          ></img>
-          <img
-            class="h-auto  mx-auto"
-            src="https://i.namu.wiki/i/x7VCJZDXPWSpxERLBpuMGtg4DJg-QnqjGBOo-DEb3f4aypDTPsBaQqOrLZaJ4TomgUpxjg6omo7ZcjR00kbFMw.svg"
-            width="50"
-          ></img>
+      <div className="my-2 max-w-4xl w-full items-center border-b font-mono text-sm border-gray-300 dark:from-inherit rounded-xl border bg-gray-200 p-8 ">
+        <div className="grid grid-cols-6 justify-items-center gap-y-2">
+          {/* 클릭 시 이벤트가 발생하는 버튼 컴포넌트로 만들어야 함 */}
+          <PokeTypeIcon type="normal" width="50" />
+          <PokeTypeIcon type="fire" width="50" />
+          <PokeTypeIcon type="water" width="50" />
+          <PokeTypeIcon type="grass" width="50" />
+          <PokeTypeIcon type="electric" width="50" />
+          <PokeTypeIcon type="ice" width="50" />
+          <PokeTypeIcon type="fighting" width="50" />
+          <PokeTypeIcon type="poison" width="50" />
+          <PokeTypeIcon type="ground" width="50" />
+          <PokeTypeIcon type="flying" width="50" />
+          <PokeTypeIcon type="psychic" width="50" />
+          <PokeTypeIcon type="bug" width="50" />
+          <PokeTypeIcon type="rock" width="50" />
+          <PokeTypeIcon type="ghost" width="50" />
+          <PokeTypeIcon type="dragon" width="50" />
+          <PokeTypeIcon type="dark" width="50" />
+          <PokeTypeIcon type="steel" width="50" />
+          <PokeTypeIcon type="fairy" width="50" />
         </div>
         <div className="items-center p-8 ">
           <div className="pb-4 w-full space-x-6 items-center border-b flex">
