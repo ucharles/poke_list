@@ -3,10 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 // showdown 종속
-// npm install @pkmn/data
-// npm install @pkmn/dex
-import { Dex } from "@pkmn/dex";
-import { Generations } from "@pkmn/data";
+// npm install @smogon/calc
+import { calculate, Generations, Pokemon, Move } from "@smogon/calc";
 import { GetPATCH, TYPE_LIST } from "./poke_data.js";
 import PokeTypeIcon from "./components/PokeTypeIcon.js";
 
@@ -22,12 +20,12 @@ export default function test() {
   function CreateGenList(gen) {
     const result = [];
     const gen_list = GetPATCH(gen);
-    // gen_list로 순회 >> @pkmn/data에서 가져온 포켓몬 정보 중에 showdown 자작 포켓몬 있음
+    // gen_list로 순회 >> @smogon/calc에서 가져온 포켓몬 정보 중에 showdown 자작 포켓몬 있음
     for (const key in gen_list) {
       result.push(
         Object.assign(
           {},
-          gens.get(gen).species.get(gen_list[key].name.en),
+          new Pokemon(Generations.get(gen), gen_list[key].name.en),
           gen_list[key]
         )
       );
@@ -36,7 +34,6 @@ export default function test() {
   }
 
   // 검색에 사용할 세대별 Array 생성
-  const gens = new Generations(Dex);
   const RBY = CreateGenList(1);
   const GSC = CreateGenList(2);
   const ADV = CreateGenList(3);

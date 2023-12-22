@@ -3538,7 +3538,7 @@ const ADV_PATCH = [
   },
 ];
 
-// 4세대 107종 + 폼체인지 27 아르세우스,체리꼬,삐죽귀,로토무,쉐이미,도롱마담,기라티나 / 134
+// 4세대 107종 + 폼체인지 27 아르세우스,체리꼬,삐쭉귀,로토무,쉐이미,도롱마담,기라티나 / 134
 const DPP_PATCH = [
   {
     name: { ko: "눈설왕", en: "Abomasnow" },
@@ -10317,21 +10317,31 @@ const TYPE_LIST = {
 
 function GetPATCH(n) {
   let ARR_PATCH = [];
+  let delete_PATCH = [];
   switch (n) {
     case 9:
       //다이맥스 삭제?
       ARR_PATCH = [...ARR_PATCH, ...[]];
     case 8:
       //피카츄, 이브이 스타터 삭제
+      delete_PATCH.push("Pikachu-Starter");
+      delete_PATCH.push("Eevee-Starter");
       //메가진화 삭제?
       ARR_PATCH = [...ARR_PATCH, ...SS_PATCH];
     case 7:
       //피카츄 코스플레이류 삭제
+      delete_PATCH.push("Pikachu-Cosplay");
+      delete_PATCH.push("Pikachu-Rock-Star");
+      delete_PATCH.push("Pikachu-Belle");
+      delete_PATCH.push("Pikachu-PhD");
+      delete_PATCH.push("Pikachu-Pop-Star");
+      delete_PATCH.push("Pikachu-Libre");
       ARR_PATCH = [...ARR_PATCH, ...SM_PATCH];
     case 6:
       ARR_PATCH = [...ARR_PATCH, ...XY_PATCH];
     case 5:
-      // 뾰족귀 피츄 삭제 필요
+      //삐쭉귀 피츄 삭제
+      delete_PATCH.push("Pichu-Spiky-eared");
       ARR_PATCH = [...ARR_PATCH, ...BW_PATCH];
     case 4:
       ARR_PATCH = [...ARR_PATCH, ...DPP_PATCH];
@@ -10342,6 +10352,12 @@ function GetPATCH(n) {
     case 1:
       ARR_PATCH = [...ARR_PATCH, ...RBY_PATCH];
   }
+
+  // @smogon/calc 에서 삭제되는 포켓몬 제외
+  for (const delete_poke of delete_PATCH) {
+    ARR_PATCH = ARR_PATCH.filter((item) => item.name.en !== delete_poke);
+  }
+
   return ARR_PATCH;
 }
 
