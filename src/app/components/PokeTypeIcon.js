@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { PokeTypeColor, PokeTypeKor } from "../types/poketypes";
+
 // type을 문자열로 받아서 이미지를 불러오는 함수
 
 /*
@@ -22,7 +24,7 @@ import Image from "next/image";
     페어리 : 17
 */
 
-function PokeTypeIcon({ type, className, width }) {
+function PokeTypeIcon({ type, className, width, lng }) {
   const getTypeIcon = (type) => {
     const pokeTypeIconObject = {
       alt: "Normal Type",
@@ -111,13 +113,23 @@ function PokeTypeIcon({ type, className, width }) {
   const pokeTypeIconObject = getTypeIcon(type);
 
   return (
-    <Image
-      className={className}
-      alt={pokeTypeIconObject.alt}
-      src={pokeTypeIconObject.src}
-      width={width}
-      height={width}
-    />
+    <div
+      className="flex justify-center items-center"
+      style={{ backgroundColor: PokeTypeColor[type] }}
+    >
+      <Image
+        className={className}
+        alt={pokeTypeIconObject.alt}
+        src={pokeTypeIconObject.src}
+        width={30}
+        height={30}
+      />
+      <div className="w-20 flex justify-center items-center text-gray-50 font-bold">
+        <p className="text-shadow">
+          {lng === "ko" ? PokeTypeKor[type] : type.toString().toUpperCase()}
+        </p>
+      </div>
+    </div>
   );
 }
 

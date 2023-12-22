@@ -165,7 +165,7 @@ export default function test() {
     }
   }
 
-  //const [pokemons, setpokemons] = useState(SV);
+  const [pokemons, setpokemons] = useState(SV);
   const [search, setSearch] = useState("");
   const [isHidden, setIsHidden] = useState(true);
   const [inputVal, setInputVal] = useState("");
@@ -211,7 +211,7 @@ export default function test() {
               className="absolute top-14 w-full top-13 bg-white p-4 rounded"
               hidden={isHidden}
             >
-              {/* {pokemons?.map((pokemon, idx) => (
+              {pokemons?.map((pokemon, idx) => (
                 <li
                   className="border-b p-1.5 font-sans list"
                   key={idx}
@@ -232,7 +232,7 @@ export default function test() {
                 >
                   {pokemon.name.ko}
                 </li>
-              ))} */}
+              ))}
             </ul>
           </div>
         </div>
@@ -240,24 +240,24 @@ export default function test() {
       <div className="my-2 max-w-4xl w-full items-center border-b font-mono text-sm border-gray-300 dark:from-inherit rounded-xl border bg-gray-200 p-8 ">
         <div className="grid grid-cols-6 justify-items-center gap-y-2">
           {/* 클릭 시 이벤트가 발생하는 버튼 컴포넌트로 만들어야 함 */}
-          <PokeTypeIcon type="normal" width="50" />
-          <PokeTypeIcon type="fire" width="50" />
-          <PokeTypeIcon type="water" width="50" />
-          <PokeTypeIcon type="grass" width="50" />
-          <PokeTypeIcon type="electric" width="50" />
-          <PokeTypeIcon type="ice" width="50" />
-          <PokeTypeIcon type="fighting" width="50" />
-          <PokeTypeIcon type="poison" width="50" />
-          <PokeTypeIcon type="ground" width="50" />
-          <PokeTypeIcon type="flying" width="50" />
-          <PokeTypeIcon type="psychic" width="50" />
-          <PokeTypeIcon type="bug" width="50" />
-          <PokeTypeIcon type="rock" width="50" />
-          <PokeTypeIcon type="ghost" width="50" />
-          <PokeTypeIcon type="dragon" width="50" />
-          <PokeTypeIcon type="dark" width="50" />
-          <PokeTypeIcon type="steel" width="50" />
-          <PokeTypeIcon type="fairy" width="50" />
+          <PokeTypeIcon type="normal" />
+          <PokeTypeIcon type="fire" />
+          <PokeTypeIcon type="water" />
+          <PokeTypeIcon type="grass" />
+          <PokeTypeIcon type="electric" />
+          <PokeTypeIcon type="ice" />
+          <PokeTypeIcon type="fighting" />
+          <PokeTypeIcon type="poison" />
+          <PokeTypeIcon type="ground" />
+          <PokeTypeIcon type="flying" />
+          <PokeTypeIcon type="psychic" />
+          <PokeTypeIcon type="bug" />
+          <PokeTypeIcon type="rock" />
+          <PokeTypeIcon type="ghost" />
+          <PokeTypeIcon type="dragon" />
+          <PokeTypeIcon type="dark" />
+          <PokeTypeIcon type="steel" />
+          <PokeTypeIcon type="fairy" />
         </div>
         <div className="items-center p-8 ">
           <div className="pb-4 w-full space-x-6 items-center border-b flex">
