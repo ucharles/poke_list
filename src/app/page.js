@@ -38,11 +38,11 @@ export default function test() {
   const GSC = CreateGenList(2);
   const ADV = CreateGenList(3);
   const DPP = CreateGenList(4);
-  const BW = DPP;
-  const XY = DPP;
-  const SM = DPP;
-  const SWSH = SM.concat(SWSH_patch);
-  const SV = SWSH.concat(SV_patch);
+  const BW = CreateGenList(5);
+  const XY = CreateGenList(6);
+  const SM = CreateGenList(7);
+  const SWSH = CreateGenList(8);
+  const SV = SWSH;
 
   // input에 값이 변경되었을 때 ul,li 조작
   function autocomplete(str) {
