@@ -1,630 +1,632 @@
 <html>
+
 <head>
-<style>
-div.box { 
-  	display: -webkit-flex;
-  	display: flex;
-	border: solid #6AC5AC 1px;
-}
-div.at_type {
-	border: 1px solid gold; 
-	width: 48%;
-}
+	<style>
+		div.box {
+			display: -webkit-flex;
+			display: flex;
+			border: solid #6AC5AC 1px;
+		}
 
-div.def_type {
-	-webkit-flex: 1;
-          	flex: 1;
-	border: 1px solid red; 
-}
+		div.at_type {
+			border: 1px solid gold;
+			width: 48%;
+		}
 
-div.myEntry {
-	border: 1px solid blue; 
-	float: left; 
-	display:flex;
-	justify-content: left;
-	align-items: left;
-	flex-direction: column;
-}
+		div.def_type {
+			-webkit-flex: 1;
+			flex: 1;
+			border: 1px solid red;
+		}
 
-
-#autoInput {
-	width:50%;
-	max-width : 200px;
-}
-
-#pokeimg{
-	width: 100%;
-	padding: 5px;
-}
-
-#type_1 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #525252; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#ADA594;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_2 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #732108; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#F75131;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_3 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #425294; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#399CFF;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_4 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #426B39; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#7BCE52;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_5 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #735218; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#FFC631;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		div.myEntry {
+			border: 1px solid blue;
+			float: left;
+			display: flex;
+			justify-content: left;
+			align-items: left;
+			flex-direction: column;
+		}
 
 
-#type_6 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #425294; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#5ACEE7;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#autoInput {
+			width: 50%;
+			max-width: 200px;
+		}
 
-#type_7 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #4A3931; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#A55239;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#pokeimg {
+			width: 100%;
+			padding: 5px;
+		}
 
-#type_8 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #4A3952; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#B55AA5;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_1 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #525252;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #ADA594;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-#type_9 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #735218; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#D2B158;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_2 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #732108;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #F75131;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-#type_10 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #425294; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#9CADF7;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_3 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #425294;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #399CFF;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-#type_11 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #6B3939; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#FF73A5;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_4 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #426B39;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #7BCE52;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-#type_12 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #426B39; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#ADBD21;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_13 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #735218; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#BDA55A;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_14 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #4A3952; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#6363B5;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
-
-#type_15 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #4A3994; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#7961E4;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_5 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #735218;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #FFC631;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
 
-#type_16 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #4A3931; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#735A4A;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_6 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #425294;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #5ACEE7;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-#type_17 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #525252; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#ADADC6;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_7 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #4A3931;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #A55239;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-#type_18 {
-	display:inline-block; 
-	margin:1px; 
-	width:60px;
-	text-align: center;
-	border: solid 3px #BD18CE; 
-	color:#FFFFFF; 
-	font-weight:bold; 
-	background:#F7B5F7;
-	border-radius: 3px;
-	text-shadow:2px 2px 1px #646464, 1px 1px 1px #646464;
-}
+		#type_8 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #4A3952;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #B55AA5;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_9 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #735218;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #D2B158;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_10 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #425294;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #9CADF7;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_11 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #6B3939;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #FF73A5;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_12 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #426B39;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #ADBD21;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_13 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #735218;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #BDA55A;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_14 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #4A3952;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #6363B5;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_15 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #4A3994;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #7961E4;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
 
-div#poke_container {
-      width: 100px;
-      height: 100px;
-      margin: 10px;
-      padding: 10px;
-      border: solid 1px brown;
-      /*float: left;*/
+		#type_16 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #4A3931;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #735A4A;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
-}
+		#type_17 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #525252;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #ADADC6;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
+
+		#type_18 {
+			display: inline-block;
+			margin: 1px;
+			width: 60px;
+			text-align: center;
+			border: solid 3px #BD18CE;
+			color: #FFFFFF;
+			font-weight: bold;
+			background: #F7B5F7;
+			border-radius: 3px;
+			text-shadow: 2px 2px 1px #646464, 1px 1px 1px #646464;
+		}
 
 
-.entry {
-	width:80px;
-	height:80px;
-	border: solid 1px black;
-float:left;
-}
+		div#poke_container {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			padding: 10px;
+			border: solid 1px brown;
+			/*float: left;*/
 
-#myEntry_info {
-width:40%;
-border: solid 1px red;
-float:left;
-}
+		}
 
-.myEntry div.on {
-  background-color: #ffb715;
-  font-weight: bold;
-}
 
-.cont {
-display:none; 
-text-align:center; 
-height: 100%;
-}
+		.entry {
+			width: 80px;
+			height: 80px;
+			border: solid 1px black;
+			float: left;
+		}
 
-#poke_container_info {
-position: absolute;
-top:10px;
-left:160px;
-background:#555; 
-text-align:center; 
-padding:50px;
-}
+		#myEntry_info {
+			width: 40%;
+			border: solid 1px red;
+			float: left;
+		}
 
-</style>
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-<script>
+		.myEntry div.on {
+			background-color: #ffb715;
+			font-weight: bold;
+		}
 
-let poke_info = {
-	//VGC Calc 형식에 따라 변화할 수 있음.
-	dex:-1,
-	name:"사용자 정의",
-	lv:1,
-	type:[],
-	base:[0,0,0,0,0,0],
-	iv:[0,0,0,0,0,0],
-	ev:[0,0,0,0,0,0],
-	nature:0,
-	ability:'',
-	holditem:'',
-	move:['test','test','test','test'],
-	terratype:0
-}
+		.cont {
+			display: none;
+			text-align: center;
+			height: 100%;
+		}
 
-// 0 no ,1 fi, 2 wa ,3 gr, 4 el 5 ic , 6fig, 7 po ,8 gro, 9 fl, 10 ps, 11 bu, 12 ro, 13 gh, 14 dr, 15 da, 16 st, 17 fa
-const type_damage = [[1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1],[1,0.5,2,0.5,1,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5],[1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1],[1,2,0.5,0.5,0.5,2,1,2,0.5,2,1,2,1,1,1,1,1,1],[1,1,1,1,0.5,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1],[1,2,1,1,1,0.5,2,1,1,1,1,1,2,1,1,1,2,1],[1,1,1,1,1,1,1,1,1,2,2,0.5,0.5,1,1,0.5,1,2],[1,1,1,0.5,1,1,0.5,0.5,2,1,2,0.5,1,1,1,1,1,0.5],[1,1,2,2,0,2,1,0.5,1,1,1,1,0.5,1,1,1,1,1],[1,1,1,0.5,2,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1],[1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1],[1,2,1,0.5,1,1,0.5,1,0.5,2,1,1,2,1,1,1,1,1],[0.5,0.5,2,2,1,1,2,0.5,2,0.5,1,1,1,1,1,1,2,1],[0,1,1,1,1,1,0,0.5,1,1,1,0.5,1,2,1,2,1,1],[1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2],[1,1,1,1,1,1,2,1,1,1,0,2,11,0.5,1,0.5,1,2],[0.5,2,1,0.5,1,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5],[1,1,1,1,1,1,0.5,2,1,1,1,0.5,1,1,0,0.5,2,1]];
+		#poke_container_info {
+			position: absolute;
+			top: 10px;
+			left: 160px;
+			background: #555;
+			text-align: center;
+			padding: 50px;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.3.js"
+		integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+	<script>
 
-result_damage = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-type_name=['노말','불꽃','물','풀','전기','얼음','격투','독','땅','비행','에스퍼','벌레','바위','고스트','드래곤','악','강철','페어리'];
-type_name_eng=[[1,'normal'],[2,'fire'],[3,'water'],[4,'grass'],[5,'electric'],[6,'ice'],[7,'fighting'],[8,'poison'],[9,'ground'],[10,'flying'],[11,'psychic'],[12,'bug'],[13,'rock'],[14,'ghost'],[15,'dragon'],[16,'dark'],[17,'steel'],[18,'fairy']]
-damx = [8,4,2,1,0.5,0.25,0.125,0]
+		let poke_info = {
+			//VGC Calc 형식에 따라 변화할 수 있음.
+			dex: -1,
+			name: "사용자 정의",
+			lv: 1,
+			type: [],
+			base: [0, 0, 0, 0, 0, 0],
+			iv: [0, 0, 0, 0, 0, 0],
+			ev: [0, 0, 0, 0, 0, 0],
+			nature: 0,
+			ability: '',
+			holditem: '',
+			move: ['test', 'test', 'test', 'test'],
+			terratype: 0
+		}
 
-//poke_list에서 포켓몬 이름, 타입 값 추가
-function get_pokemon(n) {
-		for (i = 0; i < poke_list.length; i++) {
-            if (poke_list[i][0] == n) {
-                $('#pokename').text(poke_list[i][1]);
-                for (const item of poke_list[i][2]) {
-                	add_types(item);
-                }
-            }
-        }
-}
-//타입 최대 3개까지 추가
-function add_types(n) {
- 	if($("span.type").length < 3) {
+		// 0 no ,1 fi, 2 wa ,3 gr, 4 el 5 ic , 6fig, 7 po ,8 gro, 9 fl, 10 ps, 11 bu, 12 ro, 13 gh, 14 dr, 15 da, 16 st, 17 fa
+		const type_damage = [[1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1], [1, 0.5, 2, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 0.5, 2, 1, 1, 1, 0.5, 0.5], [1, 0.5, 0.5, 2, 2, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1], [1, 2, 0.5, 0.5, 0.5, 2, 1, 2, 0.5, 2, 1, 2, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 0.5, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1], [1, 2, 1, 1, 1, 0.5, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 0.5, 1, 1, 0.5, 1, 2], [1, 1, 1, 0.5, 1, 1, 0.5, 0.5, 2, 1, 2, 0.5, 1, 1, 1, 1, 1, 0.5], [1, 1, 2, 2, 0, 2, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1], [1, 1, 1, 0.5, 2, 2, 0.5, 1, 0, 1, 1, 0.5, 2, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0.5, 2, 1, 2, 1, 2, 1, 1], [1, 2, 1, 0.5, 1, 1, 0.5, 1, 0.5, 2, 1, 1, 2, 1, 1, 1, 1, 1], [0.5, 0.5, 2, 2, 1, 1, 2, 0.5, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 1], [0, 1, 1, 1, 1, 1, 0, 0.5, 1, 1, 1, 0.5, 1, 2, 1, 2, 1, 1], [1, 0.5, 0.5, 0.5, 0.5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2], [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0, 2, 11, 0.5, 1, 0.5, 1, 2], [0.5, 2, 1, 0.5, 1, 0.5, 2, 0, 2, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 1, 0.5, 0.5], [1, 1, 1, 1, 1, 1, 0.5, 2, 1, 1, 1, 0.5, 1, 1, 0, 0.5, 2, 1]];
+
+		result_damage = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+		type_name = ['노말', '불꽃', '물', '풀', '전기', '얼음', '격투', '독', '땅', '비행', '에스퍼', '벌레', '바위', '고스트', '드래곤', '악', '강철', '페어리'];
+		type_name_eng = [[1, 'normal'], [2, 'fire'], [3, 'water'], [4, 'grass'], [5, 'electric'], [6, 'ice'], [7, 'fighting'], [8, 'poison'], [9, 'ground'], [10, 'flying'], [11, 'psychic'], [12, 'bug'], [13, 'rock'], [14, 'ghost'], [15, 'dragon'], [16, 'dark'], [17, 'steel'], [18, 'fairy']]
+		damx = [8, 4, 2, 1, 0.5, 0.25, 0.125, 0]
+
+		//poke_list에서 포켓몬 이름, 타입 값 추가
+		function get_pokemon(n) {
+			for (i = 0; i < poke_list.length; i++) {
+				if (poke_list[i][0] == n) {
+					$('#pokename').text(poke_list[i][1]);
+					for (const item of poke_list[i][2]) {
+						add_types(item);
+					}
+				}
+			}
+		}
+		//타입 최대 3개까지 추가
+		function add_types(n) {
+			if ($("span.type").length < 3) {
 				poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
 				poke_data_temp['type'].push(n);
 				$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
-				
-				$("#at_type_box").append($("<span id='type_"+n+"' class='type'>"+type_name[n-1]+"</span>"));
+
+				$("#at_type_box").append($("<span id='type_" + n + "' class='type'>" + type_name[n - 1] + "</span>"));
 				damage_calc(n);
 				print_result();
 			}
-}
-
-function pokesearch(n) {
-	reset()
-	$("#pokeimg").attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+n+".png")
-
-
-
-	//$("#pokeimg").attr("src","official-artwork/"+n+".png")
-	get_pokemon(n)
-  	jQuery.ajax({
-    	type: "GET",
-    	url: "https://pokeapi.co/api/v2/pokemon/"+n,
-    	cache: false,
-    	datatype: "JSON",
-    	success: function (obj) {
-    		console.log(obj['types']);
-    		// 이후 종족값 개체값 가져오기 
-    			
-    		
-    	
-    	},
-    	error: function (xhr, status, error) {
-        	console.log("ERROR!!!");
-    	}
-	});     
-}
-
-
-/* 
-엔트리 포켓몬과 타입 상성 비교.(예정) 
-1. 상성 여부 확인 (내 물리/특수 기술이 -> 상대 타입을 찌를 수 있는가)
-2. 역상성 확인(상대의 모든 물리/특수 기술 -> 내 타입을 찌를수 있는가,비자속 4배, 자속 2배)
-3. 상대의 기술을 등록했을 경우 (상대방의 물리/특수 기술이 -> 내 타입을 찌를수 있는가)
-
-판단 기준 3단계(유리/경고/불리)
-유리 -> 1
-경고 -> 1, 2 or 3
-불리 -> 2 or 3
-*/
-
-function type_compare() { 
-	for (i=1;i<=6;i++) {
-		entry_data = $("#entry"+i+" > input[name=poke_data]").val();
-		if( entry_data !== undefined) {
-			entry_type_data = JSON.parse(entry_data);
-			for(const item of entry_type_data['type']) {
-				if(result_damage[item-1] >= 2) {
-					console.log("entry"+i+" is strong");
-				}
-			}
 		}
-	}
-}
 
-function damage_calc(n) {
-	const temp_damage = []
-	if( n > 0 ) {
-		for (let i = 0; i < result_damage.length; i++){
-			  temp_damage.push(type_damage[n-1][i] * result_damage[i]);
-		}
-	}
-	else {
-		for (let i = 0; i < result_damage.length; i++){
-			  temp_damage.push(result_damage[i] / type_damage[Math.abs(n)-1][i]);
-		}
-	}
-	
-	result_damage = temp_damage;
-}
-
-//출력되는 데미지 배율 8 4 2 1 0.5 0.25 0.125 0
-function print_result() {
-	$(".dam").empty();
-	
-	for (let i = 0; i < result_damage.length; i++){
-		for (const item of damx) {
-			if(result_damage[i] == item) {
-				$("#"+item.toString().replace(/\./g,'_')).append($("<span id='type_"+(i+1)+"' class='res_type'>"+type_name[i]+"</span>"));
-			}
-		}
-	}
-	display_none();
-}
-
-function display_none() {
- 	for (const item of damx) {
- 		//alert($("div#"+item.toString().replace(/\./g,'_')).children().length);
- 		if($("div#"+item.toString().replace(/\./g,'_')).children().length == 0 ) {
- 			$("div#display_"+item.toString().replace(/\./g,'_')).css("display", "none");
- 			//alert("div#display_"+item.toString().replace(/\./g,'_'))
- 		}
- 		else{
- 			$("div#display_"+item.toString().replace(/\./g,'_')).css("display", "block");
- 		}
- 	}
-
- 	if($('#only_2up').is(":checked") == true){
- 		$("div#display_1").css("display", "none");
- 		$("div#display_0_5").css("display", "none");
- 		$("div#display_0_25").css("display", "none");
- 		$("div#display_0_125").css("display", "none");
- 		$("div#display_0").css("display", "none");
- 	}
-}
-
-function reset() {
-	poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
-	poke_data_temp['type'] = [];	
-	$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
-	$("#pokeimg").attr("src","");
-	$("#autoInput").val("");
-	$("#at_type_box").empty();
-	$('#pokename').text('');
-	result_damage = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-	$(".dam").empty();
-	display_none()
-}
-
-$(function () {
-	$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_info));
-
-	$(document).on("click", "#at_type_box > span", function() {
-		remove_type = ($(this).attr("id").split('_')[1] * -1);
-		poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
-		poke_data_temp['type'].splice(poke_data_temp['type'].indexOf(remove_type))		
-				$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
-		$(this).remove();
-		damage_calc(remove_type);
-		print_result();
-		if($("span.type").length == 0) {
+		function pokesearch(n) {
 			reset()
-		}
-     });
-
-	$("#poke_container").click(function() {
-		if ( $("#poke_container").hasClass("on") == true ) {
-			$("#poke_container").removeClass("on");
-    			$("#poke_container_info").hide();
-		}
-		else {	
-			$("#poke_container").addClass("on");
-			$("#poke_container_info").show();
-		}
-   		
-  	})
+			$("#pokeimg").attr("src", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + n + ".png")
 
 
-	$(".myEntry div").click(function() {
-    		var idx = $(this).index();
+
+			//$("#pokeimg").attr("src","official-artwork/"+n+".png")
+			get_pokemon(n)
+			jQuery.ajax({
+				type: "GET",
+				url: "https://pokeapi.co/api/v2/pokemon/" + n,
+				cache: false,
+				datatype: "JSON",
+				success: function (obj) {
+					console.log(obj['types']);
+					// 이후 종족값 개체값 가져오기 
+
+
+
+				},
+				error: function (xhr, status, error) {
+					console.log("ERROR!!!");
+				}
+			});
+		}
+
+
+		/* 
+		엔트리 포켓몬과 타입 상성 비교.(예정) 
+		1. 상성 여부 확인 (내 물리/특수 기술이 -> 상대 타입을 찌를 수 있는가)
+		2. 역상성 확인(상대의 모든 물리/특수 기술 -> 내 타입을 찌를수 있는가,비자속 4배, 자속 2배)
+		3. 상대의 기술을 등록했을 경우 (상대방의 물리/특수 기술이 -> 내 타입을 찌를수 있는가)
 		
-		if ( $(".myEntry div").eq(idx).hasClass("on") != true ) {
-    			$(".myEntry div").removeClass("on");
-			$(".myEntry div").eq(idx).addClass("on");
-			$("#myEntry_info> div").hide();
-			$("#myEntry_info> div").eq(idx).show();
-    		}
-		else {
-			$(".myEntry div").removeClass("on");
-			$("#myEntry_info> div").hide();
-		}
-   		
-  	})
+		판단 기준 3단계(유리/경고/불리)
+		유리 -> 1
+		경고 -> 1, 2 or 3
+		불리 -> 2 or 3
+		*/
 
-	$('button.type').on('click', function(){
-		value_temp = $(this).val();
-		// alert($("span").length); // 
-		$('#pokename').text('사용자 정의');
-		$("#pokeimg").attr("src","");
-		add_types(value_temp)		
-	})
-
-
-	/* Container -> Entry , Entry <-> Entry 요소 복사, 이동 */
-	$.event.addProp('dataTransfer');
-	$('#poke_container').on({
-		'dragstart':function(ev) {
-			ev.dataTransfer.setData('text',"poke_container");
-		
-		}
-	});
-
-	$('.entry').on({
-		'dragstart':function(ev) {
-			if(ev.target.id.substring(0,5) != "entry"){
-				ev.dataTransfer.setData('text',ev.target.parentNode.id);
-			}
-			else {
-				ev.dataTransfer.setData('text',ev.target.id);
-			}
-		
-		},
-		'dragover':function(ev) {
-			ev.preventDefault();
-			//ev.originalEvent.dataTransfer.setData('text',ev.target.parentNode.id);
-		},
-		'drop':function(ev) {
-			ev.preventDefault();
-			var data = ev.dataTransfer.getData("text");
-			var entry_source = document.getElementById(data);
-
-			// div 선택 시 자식 요소가 선택됩니다. img에 커서를 놓고 드래그 해도 부모가 선택되는 방법이 있을까요?
-			var entry_target = ev.target;
-
-			if (entry_target.id == "pokeimg") {
-				entry_target = ev.target.parentNode;
-			}	
-
-			if (data === entry_target.id) {
-				//console.log('sourceid == targetid => exit;');
-				return;
-			}
-			
-			// 자식 요소 복사
-			if(data == "poke_container" ) { 
-				
-				if (entry_target.nodeName == "DIV" && entry_target.id.substring(0,5) == "entry" ) {
-						if ( entry_target.childNodes.length != 0 ) {
-							entry_target.replaceChildren();
-						
-						}
-						
-						const childNodes = entry_source.childNodes;
-						for ( let item of childNodes) {
-						var test =  item.cloneNode();
-					
-						entry_target.appendChild(test);
+		function type_compare() {
+			for (i = 1; i <= 6; i++) {
+				entry_data = $("#entry" + i + " > input[name=poke_data]").val();
+				if (entry_data !== undefined) {
+					entry_type_data = JSON.parse(entry_data);
+					for (const item of entry_type_data['type']) {
+						if (result_damage[item - 1] >= 2) {
+							console.log("entry" + i + " is strong");
 						}
 					}
-			}
-			
-
-			// 자식 요소 교환
-			else {
-				const entry_source = document.getElementById(data);
-				const childNodes = entry_source.childNodes;
-
-				target_childNodes = entry_target.childNodes;
-				
-				child_temp = child_clone(childNodes);
-				child_temp2 = child_clone(target_childNodes);
-
-				entry_source.replaceChildren();
-				entry_target.replaceChildren();
-
-				for ( let item of child_temp2) {
-					entry_source.appendChild(item);
 				}
-
-				for ( let item2 of child_temp) {
-					entry_target.appendChild(item2);
-				}
-
 			}
 		}
-	});
-});
+
+		function damage_calc(n) {
+			const temp_damage = []
+			if (n > 0) {
+				for (let i = 0; i < result_damage.length; i++) {
+					temp_damage.push(type_damage[n - 1][i] * result_damage[i]);
+				}
+			}
+			else {
+				for (let i = 0; i < result_damage.length; i++) {
+					temp_damage.push(result_damage[i] / type_damage[Math.abs(n) - 1][i]);
+				}
+			}
+
+			result_damage = temp_damage;
+		}
+
+		//출력되는 데미지 배율 8 4 2 1 0.5 0.25 0.125 0
+		function print_result() {
+			$(".dam").empty();
+
+			for (let i = 0; i < result_damage.length; i++) {
+				for (const item of damx) {
+					if (result_damage[i] == item) {
+						$("#" + item.toString().replace(/\./g, '_')).append($("<span id='type_" + (i + 1) + "' class='res_type'>" + type_name[i] + "</span>"));
+					}
+				}
+			}
+			display_none();
+		}
+
+		function display_none() {
+			for (const item of damx) {
+				//alert($("div#"+item.toString().replace(/\./g,'_')).children().length);
+				if ($("div#" + item.toString().replace(/\./g, '_')).children().length == 0) {
+					$("div#display_" + item.toString().replace(/\./g, '_')).css("display", "none");
+					//alert("div#display_"+item.toString().replace(/\./g,'_'))
+				}
+				else {
+					$("div#display_" + item.toString().replace(/\./g, '_')).css("display", "block");
+				}
+			}
+
+			if ($('#only_2up').is(":checked") == true) {
+				$("div#display_1").css("display", "none");
+				$("div#display_0_5").css("display", "none");
+				$("div#display_0_25").css("display", "none");
+				$("div#display_0_125").css("display", "none");
+				$("div#display_0").css("display", "none");
+			}
+		}
+
+		function reset() {
+			poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
+			poke_data_temp['type'] = [];
+			$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
+			$("#pokeimg").attr("src", "");
+			$("#autoInput").val("");
+			$("#at_type_box").empty();
+			$('#pokename').text('');
+			result_damage = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+			$(".dam").empty();
+			display_none()
+		}
+
+		$(function () {
+			$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_info));
+
+			$(document).on("click", "#at_type_box > span", function () {
+				remove_type = ($(this).attr("id").split('_')[1] * -1);
+				poke_data_temp = JSON.parse($("#poke_container > input[name=poke_data]").val());
+				poke_data_temp['type'].splice(poke_data_temp['type'].indexOf(remove_type))
+				$("#poke_container > input[name=poke_data]").val(JSON.stringify(poke_data_temp));
+				$(this).remove();
+				damage_calc(remove_type);
+				print_result();
+				if ($("span.type").length == 0) {
+					reset()
+				}
+			});
+
+			$("#poke_container").click(function () {
+				if ($("#poke_container").hasClass("on") == true) {
+					$("#poke_container").removeClass("on");
+					$("#poke_container_info").hide();
+				}
+				else {
+					$("#poke_container").addClass("on");
+					$("#poke_container_info").show();
+				}
+
+			})
+
+
+			$(".myEntry div").click(function () {
+				var idx = $(this).index();
+
+				if ($(".myEntry div").eq(idx).hasClass("on") != true) {
+					$(".myEntry div").removeClass("on");
+					$(".myEntry div").eq(idx).addClass("on");
+					$("#myEntry_info> div").hide();
+					$("#myEntry_info> div").eq(idx).show();
+				}
+				else {
+					$(".myEntry div").removeClass("on");
+					$("#myEntry_info> div").hide();
+				}
+
+			})
+
+			$('button.type').on('click', function () {
+				value_temp = $(this).val();
+				// alert($("span").length); // 
+				$('#pokename').text('사용자 정의');
+				$("#pokeimg").attr("src", "");
+				add_types(value_temp)
+			})
+
+
+			/* Container -> Entry , Entry <-> Entry 요소 복사, 이동 */
+			$.event.addProp('dataTransfer');
+			$('#poke_container').on({
+				'dragstart': function (ev) {
+					ev.dataTransfer.setData('text', "poke_container");
+
+				}
+			});
+
+			$('.entry').on({
+				'dragstart': function (ev) {
+					if (ev.target.id.substring(0, 5) != "entry") {
+						ev.dataTransfer.setData('text', ev.target.parentNode.id);
+					}
+					else {
+						ev.dataTransfer.setData('text', ev.target.id);
+					}
+
+				},
+				'dragover': function (ev) {
+					ev.preventDefault();
+					//ev.originalEvent.dataTransfer.setData('text',ev.target.parentNode.id);
+				},
+				'drop': function (ev) {
+					ev.preventDefault();
+					var data = ev.dataTransfer.getData("text");
+					var entry_source = document.getElementById(data);
+
+					// div 선택 시 자식 요소가 선택됩니다. img에 커서를 놓고 드래그 해도 부모가 선택되는 방법이 있을까요?
+					var entry_target = ev.target;
+
+					if (entry_target.id == "pokeimg") {
+						entry_target = ev.target.parentNode;
+					}
+
+					if (data === entry_target.id) {
+						//console.log('sourceid == targetid => exit;');
+						return;
+					}
+
+					// 자식 요소 복사
+					if (data == "poke_container") {
+
+						if (entry_target.nodeName == "DIV" && entry_target.id.substring(0, 5) == "entry") {
+							if (entry_target.childNodes.length != 0) {
+								entry_target.replaceChildren();
+
+							}
+
+							const childNodes = entry_source.childNodes;
+							for (let item of childNodes) {
+								var test = item.cloneNode();
+
+								entry_target.appendChild(test);
+							}
+						}
+					}
+
+
+					// 자식 요소 교환
+					else {
+						const entry_source = document.getElementById(data);
+						const childNodes = entry_source.childNodes;
+
+						target_childNodes = entry_target.childNodes;
+
+						child_temp = child_clone(childNodes);
+						child_temp2 = child_clone(target_childNodes);
+
+						entry_source.replaceChildren();
+						entry_target.replaceChildren();
+
+						for (let item of child_temp2) {
+							entry_source.appendChild(item);
+						}
+
+						for (let item2 of child_temp) {
+							entry_target.appendChild(item2);
+						}
+
+					}
+				}
+			});
+		});
 
 
 
@@ -632,125 +634,159 @@ $(function () {
 
 
 
-function child_clone(child) {
-	var child_node = [];
-	for ( let item of child) {
-		child_node.push(item.cloneNode());
-	}
-	return child_node;
-}
+		function child_clone(child) {
+			var child_node = [];
+			for (let item of child) {
+				child_node.push(item.cloneNode());
+			}
+			return child_node;
+		}
 
-</script>
-<script type="text/javascript" src="autocomplate.js"></script>
-<!-- css에는 autocomplet의 요소의 샘플 json의 값이 담겨져 있습니다. -->
-<script type="text/javascript" src="poke_list.js"></script>
-<script>
-        // autocomplete 부분을 생성
-        window.onload = function () {
-            autocomplete.setAutocomplete(document.getElementById("autoInput"), poke_list)
-        }
-    </script>
+	</script>
+	<script type="text/javascript" src="autocomplate.js"></script>
+	<!-- css에는 autocomplet의 요소의 샘플 json의 값이 담겨져 있습니다. -->
+	<script type="text/javascript" src="poke_list.js"></script>
+	<script>
+		// autocomplete 부분을 생성
+		window.onload = function () {
+			autocomplete.setAutocomplete(document.getElementById("autoInput"), poke_list)
+		}
+	</script>
 </head>
-<body>
-<div class="box">
-	<div class="at_type">
-		<h1>포켓몬 : <strong id=pokename></strong></h1>
-		<div id="poke_container" draggable="true"  >
-		<img id=pokeimg onerror="this.src='poke-ball.png'">
-			<input type="hidden" name="poke_data" value="" >
-		</div>
-		 <div id="poke_container_info" style="display:none;">
-		 			포켓몬 이름(display name) <input type="text" name="display_name" value=""></br>
-        			Lv <input type="text" name="level" value=""></br>
-        			타입 <input type="text" name="type1" value=""><input type="text" name="type2" value=""></br>
-        			종족값 <input type="text" name="base_H" value=""><input type="text" name="base_A" value=""><input type="text" name="base_B" value=""><input type="text" name="base_C" value=""><input type="text" name="base_D" value=""><input type="text" name="base_S" value=""></br>
-        			개체치 <input type="text" name="iv_H" value=""><input type="text" name="iv_A" value=""><input type="text" name="iv_B" value=""><input type="text" name="iv_C" value=""><input type="text" name="iv_D" value=""><input type="text" name="iv_S" value=""></br>
-        			노력치 <input type="text" name="ev_H" value=""><input type="text" name="ev_A" value=""><input type="text" name="ev_B" value=""><input type="text" name="ev_C" value=""><input type="text" name="ev_D" value=""><input type="text" name="ev_S" value=""></br>
-        			성격 <input type="text" name="nature" value=""></br>
-        			특성 <input type="text" name="ability" value=""></br>
-        			지닌물건 <input type="text" name="holditem" value=""></br>
-        			기술1 <input type="text" name="move1" value=""></br>
-        			기술2 <input type="text" name="move2" value=""></br>
-        			기술3 <input type="text" name="move3" value=""></br>
-        			기술4 <input type="text" name="move4" value=""></br>
-        			테라스탈타입(SV) <input type="text" name="terrtype" value="">
-      		 </div>
-	<p>search input</p>
-	<div class="srch_form autocomplete">
-        <input id="autoInput" placeholder="Search...">
-    </div>
-	<p>attack type</p>
-<div id="at_type_box"></div>
-<button onclick=reset()>reset</button>
-<p>type selector</p>
-<div>
-	<button id=type_1 class="type" value="1">노말</button>
-	<button id=type_2 class="type" value="2">불꽃</button>
-	<button id=type_3 class="type" value="3">물</button>
-	<button id=type_4 class="type" value="4">풀</button>
-	<button id=type_5 class="type" value="5">전기</button>
-	<button id=type_6 class="type" value="6">얼음</button>
-	<button id=type_7 class="type" value="7">격투</button>
-	<button id=type_8 class="type" value="8">독</button>
-	<button id=type_9 class="type" value="9">땅</button>
-	<button id=type_10 class="type" value="10">비행</button>
-	<button id=type_11 class="type" value="11">에스퍼</button>
-	<button id=type_12 class="type" value="12">벌레</button>
-	<button id=type_13 class="type" value="13">바위</button>
-	<button id=type_14 class="type" value="14">고스트</button>
-	<button id=type_15 class="type" value="15">드래곤</button>
-	<button id=type_16 class="type" value="16">악</button>
-	<button id=type_17 class="type" value="17">강철</button>
-	<button id=type_18 class="type" value="18">페어리</button>
-	
-</div>
-</div>
-<div class="def_type">
-	<p>type result</p>
-	<div id="display_8" style="display: none;"><h3>(8배)</h3><div id="8" class="dam"></div></div>
-	<div id="display_4" style="display: none;"><h3>쓰면 기분이 좋아짐 (4배)</h3><div id="4" class="dam"></div></div>
-	<div id="display_2" style="display: none;"><h3>효과가 좋음 (2배)</h3><div id="2" class="dam"></div></div>
-	<div id="display_1" style="display: none;"><h3>(1배)</h3><div id="1" class="dam"></div></div>
-	<div id="display_0_5" style="display: none;"><h3>쓰면 마음이 아픔 (0.5배)</h3><div id="0_5" class="dam"></div></div>
-	<div id="display_0_25" style="display: none;"><h3>(0.25배)</h3><div id="0_25" class="dam"></div></div>
-	<div id="display_0_125" style="display: none;"><h3>(0.125배)</h3><div id="0_125" class="dam"></div></div>
-	<div id="display_0" style="display: none;"><h3>(0배)</h3><div id="0" class="dam"></div></div>
-	<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은 타입만 보기</label>
-</div>
-</div>
-<div class="box">
-결과를 출력함
-</div>
-<div class="box">
-<div class="myEntry" >
-	<div id="entry1" class="entry"  draggable="true"></div>
-	<div id="entry2" class="entry"  draggable="true"></div>
-	<div id="entry3" class="entry"  draggable="true"></div>
-	<div id="entry4" class="entry"  draggable="true"></div>
-	<div id="entry5" class="entry"  draggable="true"></div>
-	<div id="entry6" class="entry"  draggable="true"></div>
-</div>
-<div id=myEntry_info>
-      <div id="tab1" class="cont" style="display:none;">
-        </br>포켓몬 이름(display name)</br>Lv</br>타입</br>종족값</br>개체치</br>노력치</br>성격</br>특성</br>지닌물건</br>기술1</br>기술2</br>기술3</br>기술4</br>테라스탈타입(SV)
-      </div>
-      <div id="tab2" class="cont">
-        Tab Content2
-      </div>
-      <div id="tab3" class="cont">
-        Tab Content3
-      </div>
-	<div id="tab4" class="cont">
-        Tab Content4
-      </div>
-	<div id="tab5" class="cont">
-        Tab Content5
-      </div>
-	<div id="tab6" class="cont">
-        Tab Content6
-      </div>
 
-</div>
-</div>
+<body>
+	<div class="box">
+		<div class="at_type">
+			<h1>포켓몬 : <strong id=pokename></strong></h1>
+			<div id="poke_container" draggable="true">
+				<img id=pokeimg onerror="this.src='poke-ball.png'">
+				<input type="hidden" name="poke_data" value="">
+			</div>
+			<div id="poke_container_info" style="display:none;">
+				포켓몬 이름(display name) <input type="text" name="display_name" value=""></br>
+				Lv <input type="text" name="level" value=""></br>
+				타입 <input type="text" name="type1" value=""><input type="text" name="type2" value=""></br>
+				종족값 <input type="text" name="base_H" value=""><input type="text" name="base_A" value=""><input
+					type="text" name="base_B" value=""><input type="text" name="base_C" value=""><input type="text"
+					name="base_D" value=""><input type="text" name="base_S" value=""></br>
+				개체치 <input type="text" name="iv_H" value=""><input type="text" name="iv_A" value=""><input type="text"
+					name="iv_B" value=""><input type="text" name="iv_C" value=""><input type="text" name="iv_D"
+					value=""><input type="text" name="iv_S" value=""></br>
+				노력치 <input type="text" name="ev_H" value=""><input type="text" name="ev_A" value=""><input type="text"
+					name="ev_B" value=""><input type="text" name="ev_C" value=""><input type="text" name="ev_D"
+					value=""><input type="text" name="ev_S" value=""></br>
+				성격 <input type="text" name="nature" value=""></br>
+				특성 <input type="text" name="ability" value=""></br>
+				지닌물건 <input type="text" name="holditem" value=""></br>
+				기술1 <input type="text" name="move1" value=""></br>
+				기술2 <input type="text" name="move2" value=""></br>
+				기술3 <input type="text" name="move3" value=""></br>
+				기술4 <input type="text" name="move4" value=""></br>
+				테라스탈타입(SV) <input type="text" name="terrtype" value="">
+			</div>
+			<p>search input</p>
+			<div class="srch_form autocomplete">
+				<input id="autoInput" placeholder="Search...">
+			</div>
+			<p>attack type</p>
+			<div id="at_type_box"></div>
+			<button onclick=reset()>reset</button>
+			<p>type selector</p>
+			<div>
+				<button id=type_1 class="type" value="1">노말</button>
+				<button id=type_2 class="type" value="2">불꽃</button>
+				<button id=type_3 class="type" value="3">물</button>
+				<button id=type_4 class="type" value="4">풀</button>
+				<button id=type_5 class="type" value="5">전기</button>
+				<button id=type_6 class="type" value="6">얼음</button>
+				<button id=type_7 class="type" value="7">격투</button>
+				<button id=type_8 class="type" value="8">독</button>
+				<button id=type_9 class="type" value="9">땅</button>
+				<button id=type_10 class="type" value="10">비행</button>
+				<button id=type_11 class="type" value="11">에스퍼</button>
+				<button id=type_12 class="type" value="12">벌레</button>
+				<button id=type_13 class="type" value="13">바위</button>
+				<button id=type_14 class="type" value="14">고스트</button>
+				<button id=type_15 class="type" value="15">드래곤</button>
+				<button id=type_16 class="type" value="16">악</button>
+				<button id=type_17 class="type" value="17">강철</button>
+				<button id=type_18 class="type" value="18">페어리</button>
+
+			</div>
+		</div>
+		<div class="def_type">
+			<p>type result</p>
+			<div id="display_8" style="display: none;">
+				<h3>(8배)</h3>
+				<div id="8" class="dam"></div>
+			</div>
+			<div id="display_4" style="display: none;">
+				<h3>쓰면 기분이 좋아짐 (4배)</h3>
+				<div id="4" class="dam"></div>
+			</div>
+			<div id="display_2" style="display: none;">
+				<h3>효과가 좋음 (2배)</h3>
+				<div id="2" class="dam"></div>
+			</div>
+			<div id="display_1" style="display: none;">
+				<h3>(1배)</h3>
+				<div id="1" class="dam"></div>
+			</div>
+			<div id="display_0_5" style="display: none;">
+				<h3>쓰면 마음이 아픔 (0.5배)</h3>
+				<div id="0_5" class="dam"></div>
+			</div>
+			<div id="display_0_25" style="display: none;">
+				<h3>(0.25배)</h3>
+				<div id="0_25" class="dam"></div>
+			</div>
+			<div id="display_0_125" style="display: none;">
+				<h3>(0.125배)</h3>
+				<div id="0_125" class="dam"></div>
+			</div>
+			<div id="display_0" style="display: none;">
+				<h3>(0배)</h3>
+				<div id="0" class="dam"></div>
+			</div>
+			<input type="checkbox" id="only_2up" name="only_2up" onchange="display_none()"><label for="only_2up"> 효과가 좋은
+				타입만 보기</label>
+		</div>
+	</div>
+	<div class="box">
+		결과를 출력함
+	</div>
+	<div class="box">
+		<div class="myEntry">
+			<div id="entry1" class="entry" draggable="true"></div>
+			<div id="entry2" class="entry" draggable="true"></div>
+			<div id="entry3" class="entry" draggable="true"></div>
+			<div id="entry4" class="entry" draggable="true"></div>
+			<div id="entry5" class="entry" draggable="true"></div>
+			<div id="entry6" class="entry" draggable="true"></div>
+		</div>
+		<div id=myEntry_info>
+			<div id="tab1" class="cont" style="display:none;">
+				</br>포켓몬 이름(display
+				name)</br>Lv</br>타입</br>종족값</br>개체치</br>노력치</br>성격</br>특성</br>지닌물건</br>기술1</br>기술2</br>기술3</br>기술4</br>테라스탈타입(SV)
+			</div>
+			<div id="tab2" class="cont">
+				Tab Content2
+			</div>
+			<div id="tab3" class="cont">
+				Tab Content3
+			</div>
+			<div id="tab4" class="cont">
+				Tab Content4
+			</div>
+			<div id="tab5" class="cont">
+				Tab Content5
+			</div>
+			<div id="tab6" class="cont">
+				Tab Content6
+			</div>
+
+		</div>
+	</div>
 </body>
+
 </html>
