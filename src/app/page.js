@@ -10,7 +10,7 @@ import { RBY_PATCH, GSC_PATCH } from "./gen_list.js";
 export default function test() {
   // 자동 완성 리스트 샘플
 
-  // 세대별 포켓몬 리스트 예제 
+  // 세대별 포켓몬 리스트 예제
   // https://github.com/limelee85/poke_list/issues/5 이슈로 2세대까지 임시적용
   // SWSH_patch , SV_patch 삭제해야함
   const SWSH_patch = [
