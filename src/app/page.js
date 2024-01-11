@@ -8,6 +8,7 @@ import PokeTypeSelectButtonList from "./components/PokeTypeSelectButtonList.js";
 import CalculatedTypeResult from "./components/CalculatedTypeResult.js";
 
 import SearchPokemon from "./components/SearchPokemon.js";
+import SelectedPokeInfo from "./components/SelectedPokeInfo.js";
 
 export default function test() {
   const [searchResult, setSearchResult] = useState({});
@@ -24,6 +25,10 @@ export default function test() {
       <div className="flex w-full items-center justify-center space-x-6 bg-gray-600 px-1 py-2 text-sm sm:px-2 sm:py-4">
         <SearchPokemon setResultFc={setSearchResult} />
       </div>
+      <div>
+        <SelectedPokeInfo searchedPokemon={searchResult} />
+      </div>
+      <div className="mb-1 border"></div>
       <div className="w-full items-center text-sm sm:py-2">
         <PokeTypeSelectButtonList
           typeResult={typeResult}

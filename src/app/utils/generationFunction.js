@@ -14,9 +14,20 @@ export function createGenList(gens, genNum) {
       Object.assign(
         {},
         gens.get(genNum).species.get(genList[key].name.en),
-        genList[key]
-      )
+        genList[key],
+      ),
     );
   }
+
+  result.sort((a, b) => {
+    if (a.name.ko < b.name.ko) {
+      return -1;
+    }
+    if (a.name.ko > b.name.ko) {
+      return 1;
+    }
+    return 0;
+  });
+
   return result;
 }

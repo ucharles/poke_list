@@ -24,10 +24,26 @@ export function formatTypeArray(typeArray) {
           temp["÷8"] = [...(temp["÷8"] || []), PokeTypeList[idx]];
           break;
         case 0:
-          temp["0"] = [...(temp["0"] || []), PokeTypeList[idx]];
+          temp["X"] = [...(temp["X"] || []), PokeTypeList[idx]];
           break;
       }
     }
   });
+  return temp;
+}
+
+export function sortTypeResultArray(data, order = true) {
+  const SORT_ORDER = ["×8", "×4", "×2", "÷2", "÷4", "÷8", "X"];
+
+  const orderedSortOrder = order ? SORT_ORDER : SORT_ORDER.slice().reverse();
+  const temp = {};
+
+  orderedSortOrder.forEach((key) => {
+    const strKey = String(key);
+    if (data.hasOwnProperty(strKey)) {
+      temp[strKey] = data[strKey];
+    }
+  });
+
   return temp;
 }

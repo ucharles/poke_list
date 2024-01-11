@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { TYPE_LIST } from "../poke_data.js";
-import { formatTypeArray } from "../utils/typeCalculate.js";
+import {
+  formatTypeArray,
+  sortTypeResultArray,
+} from "../utils/typeCalculate.js";
 import { DamageLabelArray } from "../types/poketypes.js";
 import PokeTypeIcon from "./PokeTypeIcon.js";
 
@@ -26,7 +29,9 @@ function CalculatedTypeResult({ typeResult, className }) {
   }, [typeResult]);
 
   useEffect(() => {
-    setFormatTypeResult(formatTypeArray(calculateTypeResult));
+    setFormatTypeResult(
+      sortTypeResultArray(formatTypeArray(calculateTypeResult)),
+    );
     console.log(formatTypeResult);
   }, [calculateTypeResult]);
 
