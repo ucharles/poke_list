@@ -6,22 +6,18 @@ import Image from "next/image";
 // component
 
 // util
-import { Dex } from "@pkmn/dex";
-import { Generations } from "@pkmn/data";
 import { createGenList } from "../utils/generationFunction";
-import { GetPATCH, TYPE_LIST } from "../poke_data.js";
 
 function SearchPokemon({ setResultFc }) {
   // 검색에 사용할 세대별 Array 생성
-  const gens = new Generations(Dex);
-  const RBY = createGenList(gens, 1);
-  const GSC = createGenList(gens, 2);
-  const ADV = createGenList(gens, 3);
-  const DPP = createGenList(gens, 4);
-  const BW = createGenList(gens, 5);
-  const XY = createGenList(gens, 6);
-  const SM = createGenList(gens, 7);
-  const SWSH = createGenList(gens, 8);
+  const RBY = createGenList(1);
+  const GSC = createGenList(2);
+  const ADV = createGenList(3);
+  const DPP = createGenList(4);
+  const BW = createGenList(5);
+  const XY = createGenList(6);
+  const SM = createGenList(7);
+  const SWSH = createGenList(8);
   const SV = SWSH;
 
   // 세대 선택 시 포켓몬 리스트 교체
