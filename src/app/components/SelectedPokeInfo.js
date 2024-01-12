@@ -9,15 +9,16 @@ function SelectedPokeInfo({ searchedPokemon }) {
           <Image
             src={pokemon?.image?.default}
             alt={pokemon?.name?.ko}
-            width={75}
-            height={75}
+            width={74}
+            height={74}
           />
         ) : (
           <Image
             src={"/icon/pokemon/twotone-catching-pokemon.svg"}
             alt={"none"}
-            width={75}
-            height={75}
+            width={50}
+            height={50}
+            className="m-3"
           />
         )}
       </div>

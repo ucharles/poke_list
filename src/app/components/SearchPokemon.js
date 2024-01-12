@@ -1,6 +1,6 @@
 // SelectGeneration에서 선택된 값에 따라 검색 범위가 달라짐.
 // library
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 
 // component
@@ -150,6 +150,7 @@ function SearchPokemon({ setResultFc }) {
   const [isHidden, setIsHidden] = useState(true);
   const [inputVal, setInputVal] = useState("");
   const [searchYN, setSearchYN] = useState(true);
+  const pokemonSearchListRef = useRef(null);
 
   // // Add keyboard event listener
   // useEffect(() => {
@@ -159,6 +160,28 @@ function SearchPokemon({ setResultFc }) {
   //     window.removeEventListener("keydown", handleKeyDown);
   //   };
   // }, [selectedIndex]);
+
+  // useEffect(() => {
+  //   const handleKeyDown = (e) => {
+  //     const list = pokemonSearchListRef.current;
+  //     if (list) {
+  //       if (e.keyCode === 38) {
+  //         // 위 방향키
+  //         list.scrollBy(0, -100);
+  //       } else if (e.keyCode === 40) {
+  //         // 아래 방향키
+  //         list.scrollBy(0, 100);
+  //       }
+  //     }
+  //   };
+
+  //   window.addEventListener("keydown", handleKeyDown);
+
+  //   // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
 
   // 검색어에 따라 필터링된 포켓몬 목록
   const filteredPokemons = pokemons.filter((pokemon) =>
@@ -187,7 +210,7 @@ function SearchPokemon({ setResultFc }) {
       </div>
       <div className="relative z-10 w-full">
         <input
-          type="text"
+          type="search"
           value={inputVal}
           placeholder="Search"
           onFocus={(e) => autoComplete(e.target.value)}
@@ -196,11 +219,12 @@ function SearchPokemon({ setResultFc }) {
           onBlur={(e) => setIsHidden(true)}
           onChange={(e) => autoComplete(e.target.value)}
           onKeyDown={(e) => autoCompleteKeyEvent(e.key, e.target.value)}
-          className="w-full rounded-full border bg-white px-6 py-3 shadow"
+          className="w-full rounded-full border bg-white px-5 py-2 text-base shadow"
         ></input>
         <ul
-          className="top-13 absolute top-14 h-64 w-full overflow-hidden overflow-y-scroll rounded bg-white p-4"
+          className="pokemon-search-list top-13 absolute top-14 h-64 w-full overflow-hidden overflow-y-scroll rounded bg-white p-4"
           hidden={isHidden}
+          ref={pokemonSearchListRef}
         >
           {filteredPokemons?.slice(0, 20).map((pokemon, idx) => (
             <li

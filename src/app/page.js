@@ -33,10 +33,10 @@ export default function test() {
         <PokeTypeSelectButtonList
           typeResult={typeResult}
           setTypeResultFc={setTypeResult}
-          className="px-1 pt-1 sm:pt-0"
+          className="px-2 pt-1 sm:pt-0"
         />
         <div className="my-2 border sm:my-3"></div>
-        <CalculatedTypeResult typeResult={typeResult} className="px-1" />
+        <CalculatedTypeResult typeResult={typeResult} className="px-2" />
       </div>
       <div></div>
     </main>
