@@ -61,76 +61,62 @@ function SearchPokemon({ setResultFc }) {
     setIsHidden(false);
   }
 
-  // Handle keyboard input
-  // const handleKeyDown = (e) => {
-  //   if (e.key === "ArrowUp" && selectedIndex > 0) {
-  //     setSelectedIndex(selectedIndex - 1);
-  //     setInputVal(items[selectedIndex - 1]);
-  //   } else if (e.key === "ArrowDown" && selectedIndex < items.length - 1) {
-  //     setSelectedIndex(selectedIndex + 1);
-  //     setInputVal(items[selectedIndex + 1]);
-  //   } else if (e.key === "Enter") {
-  //     setInputVal(items[selectedIndex]);
-  //     setIsHidden(true);
-  //   }
-  // };
-
   // 자동 완성 리스트 키 및 마우스 조작 이벤트
-  function autoCompleteKeyEvent(key, target = null) {
-    let temp = document.getElementsByClassName("list");
-    let list = [];
-    let index = -1;
-    for (const l of temp) {
-      if (l.getAttribute("hidden") === null) {
-        list.push(l);
-        if (l.style.background === "yellow") {
-          index = list.length - 1;
-        }
-      }
-    }
-    switch (key) {
-      case "MouseOver":
-        for (const l of list) {
-          l.style.background = "none";
-        }
-        target.style.background = "yellow";
-        break;
-      case "ArrowDown":
-        if (index != -1 && index + 1 < list.length) {
-          list[index].style.background = "none";
-        }
-        if (index + 1 != list.length) {
-          list[index + 1].style.background = "yellow";
-        }
-        break;
+  // function autoCompleteKeyEvent(key, target = null) {
+  //   let temp = document.getElementsByClassName("list");
+  //   let list = [];
+  //   let index = -1;
+  //   for (const l of temp) {
+  //     if (l.getAttribute("hidden") === null) {
+  //       list.push(l);
+  //       if (l.style.background === "yellow") {
+  //         index = list.length - 1;
+  //       }
+  //     }
+  //   }
+  //   switch (key) {
+  //     case "MouseOver":
+  //       for (const l of list) {
+  //         l.style.background = "none";
+  //       }
+  //       target.style.background = "yellow";
+  //       break;
+  //     case "ArrowDown":
+  //       if (index != -1 && index + 1 < list.length) {
+  //         list[index].style.background = "none";
+  //       }
+  //       if (index + 1 != list.length) {
+  //         list[index + 1].style.background = "yellow";
+  //       }
+  //       break;
 
-      case "ArrowUp":
-        if (index - 1 > -1) {
-          list[index - 1].style.background = "yellow";
-        }
-        if (index > 0 && index != list.length) {
-          list[index].style.background = "none";
-        }
-        break;
+  //     case "ArrowUp":
+  //       if (index - 1 > -1) {
+  //         list[index - 1].style.background = "yellow";
+  //       }
+  //       if (index > 0 && index != list.length) {
+  //         list[index].style.background = "none";
+  //       }
+  //       break;
 
-      case "Enter":
-        // Enter 이후 검색할 문자열 저장
-        let searchVal = target;
-        if (index !== -1) {
-          setInputVal(list[index].innerText);
-          list[index].style.background = "none";
-          // 자동 검색 리스트에서 선택한 것이 있을 경우 문자열 변경
-          searchVal = list[index].innerText;
-        }
-        document.activeElement.blur();
-        // 포켓몬 검색
-        searchPokemon(searchVal);
-        console.log("enter");
-        console.log("enter e.target.innerText:", searchVal);
+  //     case "Enter":
+  //       // Enter 이후 검색할 문자열 저장
+  //       let searchVal = target;
+  //       if (index !== -1) {
+  //         setInputVal(list[index].innerText);
+  //         list[index].style.background = "none";
+  //         // 자동 검색 리스트에서 선택한 것이 있을 경우 문자열 변경
+  //         searchVal = list[index].innerText;
+  //       }
+  //       document.activeElement.blur();
+  //       // 포켓몬 검색
+  //       searchPokemon(searchVal);
+  //       console.log("enter");
+  //       console.log("enter e.target.innerText:", searchVal);
 
-        break;
-    }
-  }
+  //       break;
+  //   }
+  // }
 
   // 포켓몬 검색
   function searchPokemon(str) {
@@ -145,48 +131,83 @@ function SearchPokemon({ setResultFc }) {
   }
 
   const [pokemons, setPokemons] = useState(SV);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const [search, setSearch] = useState("");
   const [isHidden, setIsHidden] = useState(true);
   const [inputVal, setInputVal] = useState("");
   const [searchYN, setSearchYN] = useState(true);
   const pokemonSearchListRef = useRef(null);
 
-  // // Add keyboard event listener
-  // useEffect(() => {
-  //   window.addEventListener("keydown", handleKeyDown);
-
-  //   return () => {
-  //     window.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, [selectedIndex]);
-
-  // useEffect(() => {
-  //   const handleKeyDown = (e) => {
-  //     const list = pokemonSearchListRef.current;
-  //     if (list) {
-  //       if (e.keyCode === 38) {
-  //         // 위 방향키
-  //         list.scrollBy(0, -100);
-  //       } else if (e.keyCode === 40) {
-  //         // 아래 방향키
-  //         list.scrollBy(0, 100);
-  //       }
-  //     }
-  //   };
-
-  //   window.addEventListener("keydown", handleKeyDown);
-
-  //   // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거
-  //   return () => {
-  //     window.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, []);
-
   // 검색어에 따라 필터링된 포켓몬 목록
   const filteredPokemons = pokemons.filter((pokemon) =>
     pokemon.name.ko.includes(inputVal),
   );
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const list = pokemonSearchListRef.current;
+      const liElements = pokemonSearchListRef.current.querySelectorAll("li");
+      const key = e.key;
+      const itemHeight = 54;
+      const minIndexToScroll = 2;
+      const scrollPosition = (selectedIndex - minIndexToScroll) * itemHeight;
+
+      switch (key) {
+        case "ArrowUp":
+          if (isHidden) {
+            setIsHidden(false);
+            break;
+          }
+          if (selectedIndex > 0) {
+            setSelectedIndex((prev) => prev - 1);
+          }
+          if (list) {
+            list.scrollTo(0, scrollPosition - itemHeight);
+          }
+          break;
+        case "ArrowDown":
+          if (isHidden) {
+            setIsHidden(false);
+            break;
+          }
+          if (selectedIndex < liElements.length - 1) {
+            setSelectedIndex((prev) => prev + 1);
+          }
+          if (list && selectedIndex >= minIndexToScroll) {
+            list.scrollTo(0, scrollPosition);
+          }
+          break;
+        case "Escape":
+          if (!isHidden) {
+            setIsHidden(true);
+          }
+          break;
+        case "Enter":
+          setIsHidden(true);
+          setSelectedIndex(0);
+          setInputVal(filteredPokemons[selectedIndex].name.ko);
+          searchPokemon(filteredPokemons[selectedIndex].name.ko);
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedIndex, filteredPokemons, isHidden]);
+
+  // useEffect(() => {
+  //   const list = pokemonSearchListRef.current;
+  //   if (list) {
+  //     const itemHeight = 43;
+  //     const scrollPosition = selectedIndex * itemHeight;
+
+  //     list.scrollTo(0, scrollPosition);
+  //   }
+  // }, [selectedIndex]); // selectedIndex가 변경될 때마다 실행
 
   return (
     <div className="mr-2 flex w-full items-center justify-center space-x-3 sm:space-x-6">
@@ -214,11 +235,11 @@ function SearchPokemon({ setResultFc }) {
           value={inputVal}
           placeholder="Search"
           onFocus={(e) => autoComplete(e.target.value)}
-          // 터치 이벤트 추가
-          onTouchEnd={(e) => autoComplete(e.target.value)}
-          onBlur={(e) => setIsHidden(true)}
+          onBlur={(e) => {
+            setIsHidden(true);
+            setSelectedIndex(null);
+          }}
           onChange={(e) => autoComplete(e.target.value)}
-          onKeyDown={(e) => autoCompleteKeyEvent(e.key, e.target.value)}
           className="w-full rounded-full border bg-white px-5 py-2 text-base shadow"
         ></input>
         <ul
@@ -228,32 +249,20 @@ function SearchPokemon({ setResultFc }) {
         >
           {filteredPokemons?.slice(0, 20).map((pokemon, idx) => (
             <li
-              className="list flex items-center space-x-3 border-b p-1.5 font-sans"
+              className={`${
+                idx === selectedIndex ? "bg-blue-200" : "bg-transparent"
+              } list flex items-center space-x-3 border-b p-1.5 font-sans`}
               key={idx}
               hidden={
                 !pokemon.name.ko.substring(0, inputVal.length).includes(search)
               }
-              onMouseOver={(e) => autoCompleteKeyEvent("MouseOver", e.target)}
-              onMouseLeave={(e) => (e.target.style.background = "none")}
-              onMouseDown={(e) => {
-                console.log("mouse down");
-                console.log(
-                  "mouse down e.target.innerText:",
-                  e.target.innerText,
-                );
-                setInputVal(e.target.innerText.replace(/\n/g, ""));
-                searchPokemon(e.target.innerText.replace(/\n/g, ""));
+              onMouseOver={() => setSelectedIndex(idx)}
+              onMouseLeave={() => setSelectedIndex(-1)}
+              onMouseDown={() => {
+                setInputVal(pokemon.name.ko);
+                searchPokemon(pokemon.name.ko);
+                setIsHidden(true);
               }}
-              // 터치 이벤트 추가
-              // onTouchEnd={(e) => {
-              //   console.log("touch end");
-              //   console.log(
-              //     "touch end e.target.innerText:",
-              //     e.target.innerText,
-              //   );
-              //   setInputVal(e.target.innerText.replace(/\n/g, ""));
-              //   searchPokemon(e.target.innerText.replace(/\n/g, ""));
-              // }}
             >
               <Image
                 src={pokemon.image.default}
