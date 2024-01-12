@@ -24,7 +24,7 @@ import { PokeTypeColor, PokeTypeKor } from "../types/poketypes";
     페어리 : 17
 */
 
-function PokeTypeIcon({ type, className, width, lng }) {
+function PokeTypeIcon({ type, width = 24, lng }) {
   const getTypeIcon = (type) => {
     const pokeTypeIconObject = {
       alt: "Normal Type",
@@ -32,75 +32,75 @@ function PokeTypeIcon({ type, className, width, lng }) {
     };
 
     switch (type) {
-      case "normal":
+      case "Normal":
         pokeTypeIconObject.alt = "Normal Type";
         pokeTypeIconObject.src = "/icon/poketypes/normal.svg";
         return pokeTypeIconObject;
-      case "fire":
+      case "Fire":
         pokeTypeIconObject.alt = "Fire Type";
         pokeTypeIconObject.src = "/icon/poketypes/fire.svg";
         return pokeTypeIconObject;
-      case "water":
+      case "Water":
         pokeTypeIconObject.alt = "Water Type";
         pokeTypeIconObject.src = "/icon/poketypes/water.svg";
         return pokeTypeIconObject;
-      case "grass":
+      case "Grass":
         pokeTypeIconObject.alt = "Grass Type";
         pokeTypeIconObject.src = "/icon/poketypes/grass.svg";
         return pokeTypeIconObject;
-      case "electric":
+      case "Electric":
         pokeTypeIconObject.alt = "Electric Type";
         pokeTypeIconObject.src = "/icon/poketypes/electric.svg";
         return pokeTypeIconObject;
-      case "ice":
+      case "Ice":
         pokeTypeIconObject.alt = "Ice Type";
         pokeTypeIconObject.src = "/icon/poketypes/ice.svg";
         return pokeTypeIconObject;
-      case "fighting":
+      case "Fighting":
         pokeTypeIconObject.alt = "Fighting Type";
         pokeTypeIconObject.src = "/icon/poketypes/fighting.svg";
         return pokeTypeIconObject;
-      case "poison":
+      case "Poison":
         pokeTypeIconObject.alt = "Poison Type";
         pokeTypeIconObject.src = "/icon/poketypes/poison.svg";
         return pokeTypeIconObject;
-      case "ground":
+      case "Ground":
         pokeTypeIconObject.alt = "Ground Type";
         pokeTypeIconObject.src = "/icon/poketypes/ground.svg";
         return pokeTypeIconObject;
-      case "flying":
+      case "Flying":
         pokeTypeIconObject.alt = "Flying Type";
         pokeTypeIconObject.src = "/icon/poketypes/flying.svg";
         return pokeTypeIconObject;
-      case "psychic":
+      case "Psychic":
         pokeTypeIconObject.alt = "Psychic Type";
         pokeTypeIconObject.src = "/icon/poketypes/psychic.svg";
         return pokeTypeIconObject;
-      case "bug":
+      case "Bug":
         pokeTypeIconObject.alt = "Bug Type";
         pokeTypeIconObject.src = "/icon/poketypes/bug.svg";
         return pokeTypeIconObject;
-      case "rock":
+      case "Rock":
         pokeTypeIconObject.alt = "Rock Type";
         pokeTypeIconObject.src = "/icon/poketypes/rock.svg";
         return pokeTypeIconObject;
-      case "ghost":
+      case "Ghost":
         pokeTypeIconObject.alt = "Ghost Type";
         pokeTypeIconObject.src = "/icon/poketypes/ghost.svg";
         return pokeTypeIconObject;
-      case "dragon":
+      case "Dragon":
         pokeTypeIconObject.alt = "Dragon Type";
         pokeTypeIconObject.src = "/icon/poketypes/dragon.svg";
         return pokeTypeIconObject;
-      case "dark":
+      case "Dark":
         pokeTypeIconObject.alt = "Dark Type";
         pokeTypeIconObject.src = "/icon/poketypes/dark.svg";
         return pokeTypeIconObject;
-      case "steel":
+      case "Steel":
         pokeTypeIconObject.alt = "Steel Type";
         pokeTypeIconObject.src = "/icon/poketypes/steel.svg";
         return pokeTypeIconObject;
-      case "fairy":
+      case "Fairy":
         pokeTypeIconObject.alt = "Fairy Type";
         pokeTypeIconObject.src = "/icon/poketypes/fairy.svg";
         return pokeTypeIconObject;
@@ -114,18 +114,18 @@ function PokeTypeIcon({ type, className, width, lng }) {
 
   return (
     <div
-      className="flex justify-center items-center"
+      className="mr-1 flex h-9 w-full items-center justify-center rounded-md"
       style={{ backgroundColor: PokeTypeColor[type] }}
     >
       <Image
-        className={className}
         alt={pokeTypeIconObject.alt}
         src={pokeTypeIconObject.src}
         width={30}
         height={30}
+        className="sm:ml-1"
       />
-      <div className="w-20 flex justify-center items-center text-gray-50 font-bold">
-        <p className="text-shadow">
+      <div className="hidden w-full items-center justify-center overflow-hidden font-bold text-gray-50 sm:flex">
+        <p>
           {lng === "ko" ? PokeTypeKor[type] : type.toString().toUpperCase()}
         </p>
       </div>
