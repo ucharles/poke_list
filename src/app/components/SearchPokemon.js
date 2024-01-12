@@ -131,7 +131,7 @@ function SearchPokemon({ setResultFc }) {
   }
 
   const [pokemons, setPokemons] = useState(SV);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [search, setSearch] = useState("");
   const [isHidden, setIsHidden] = useState(true);
   const [inputVal, setInputVal] = useState("");
@@ -158,10 +158,10 @@ function SearchPokemon({ setResultFc }) {
             setIsHidden(false);
             break;
           }
-          if (selectedIndex > 0) {
-            setSelectedIndex((prev) => prev - 1);
-          }
           if (list) {
+            if (selectedIndex > 0) {
+              setSelectedIndex((prev) => prev - 1);
+            }
             list.scrollTo(0, scrollPosition - itemHeight);
           }
           break;
@@ -170,11 +170,13 @@ function SearchPokemon({ setResultFc }) {
             setIsHidden(false);
             break;
           }
-          if (selectedIndex < liElements.length - 1) {
-            setSelectedIndex((prev) => prev + 1);
-          }
-          if (list && selectedIndex >= minIndexToScroll) {
-            list.scrollTo(0, scrollPosition);
+          if (list) {
+            if (selectedIndex < liElements.length - 1) {
+              setSelectedIndex((prev) => prev + 1);
+            }
+            if (selectedIndex >= minIndexToScroll) {
+              list.scrollTo(0, scrollPosition);
+            }
           }
           break;
         case "Escape":
@@ -183,10 +185,16 @@ function SearchPokemon({ setResultFc }) {
           }
           break;
         case "Enter":
-          setIsHidden(true);
-          setSelectedIndex(0);
-          setInputVal(filteredPokemons[selectedIndex].name.ko);
-          searchPokemon(filteredPokemons[selectedIndex].name.ko);
+          if (isHidden) {
+            setIsHidden(false);
+            break;
+          }
+          if (list) {
+            setIsHidden(true);
+            setSelectedIndex(0);
+            setInputVal(filteredPokemons[selectedIndex].name.ko);
+            searchPokemon(filteredPokemons[selectedIndex].name.ko);
+          }
           break;
       }
     };
@@ -197,7 +205,7 @@ function SearchPokemon({ setResultFc }) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedIndex, filteredPokemons, isHidden]);
+  }, [selectedIndex, filteredPokemons, isHidden, inputVal]);
 
   // useEffect(() => {
   //   const list = pokemonSearchListRef.current;
@@ -237,7 +245,7 @@ function SearchPokemon({ setResultFc }) {
           onFocus={(e) => autoComplete(e.target.value)}
           onBlur={(e) => {
             setIsHidden(true);
-            setSelectedIndex(null);
+            setSelectedIndex(0);
           }}
           onChange={(e) => autoComplete(e.target.value)}
           className="w-full rounded-full border bg-white px-5 py-2 text-base shadow"
@@ -257,7 +265,7 @@ function SearchPokemon({ setResultFc }) {
                 !pokemon.name.ko.substring(0, inputVal.length).includes(search)
               }
               onMouseOver={() => setSelectedIndex(idx)}
-              onMouseLeave={() => setSelectedIndex(-1)}
+              onMouseLeave={() => setSelectedIndex(0)}
               onMouseDown={() => {
                 setInputVal(pokemon.name.ko);
                 searchPokemon(pokemon.name.ko);
