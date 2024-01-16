@@ -259,7 +259,7 @@ function SearchPokemon({ setResultFc }) {
             <li
               className={`${
                 idx === selectedIndex ? "bg-blue-200" : "bg-transparent"
-              } list flex items-center space-x-3 border-b p-1.5 font-sans`}
+              } list flex items-center space-x-3 border-b p-1.5`}
               key={idx}
               hidden={
                 !pokemon.name.ko.substring(0, inputVal.length).includes(search)

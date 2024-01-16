@@ -1,17 +1,14 @@
 import Image from "next/image";
+import PokemonImage from "./PokemonImage";
+import PokeTypeList from "./PokeTypeList";
 
-function SelectedPokeInfo({ searchedPokemon }) {
+function SelectedPokeInfo({ searchedPokemon, lng }) {
   const pokemon = searchedPokemon || { name: "No pokemon selected" };
   return (
     <div className="selected-pokemon-info flex px-2 py-2">
       <div>
         {pokemon?.image ? (
-          <Image
-            src={pokemon?.image?.default}
-            alt={pokemon?.name?.ko}
-            width={74}
-            height={74}
-          />
+          <PokemonImage pokemon={pokemon} />
         ) : (
           <Image
             src={"/icon/pokemon/twotone-catching-pokemon.svg"}
@@ -25,17 +22,15 @@ function SelectedPokeInfo({ searchedPokemon }) {
       <div className="space-y-1 px-3 sm:px-4">
         <div>
           {pokemon?.name ? (
-            <h2 className="text-xl font-extrabold">{pokemon?.name?.ko}</h2>
+            <div>
+              <h2 className="text-xl font-extrabold">{pokemon?.name?.ko}</h2>
+              <div className="selected-pokemon-info__types">
+                <PokeTypeList types={pokemon?.types} lng={lng} />
+              </div>
+            </div>
           ) : (
             <h2>No pokemon selected</h2>
           )}
-        </div>
-        <div className="selected-pokemon-info__types">
-          {pokemon?.types?.length > 1
-            ? pokemon.types.join(", ")
-            : pokemon?.types
-              ? pokemon.types[0]
-              : ""}
         </div>
       </div>
     </div>

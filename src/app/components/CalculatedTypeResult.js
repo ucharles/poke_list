@@ -4,10 +4,9 @@ import {
   formatTypeArray,
   sortTypeResultArray,
 } from "../utils/typeCalculate.js";
-import { DamageLabelArray } from "../types/poketypes.js";
 import PokeTypeIcon from "./PokeTypeIcon.js";
 
-function CalculatedTypeResult({ typeResult, className }) {
+function CalculatedTypeResult({ typeResult, className, lng }) {
   function calculateType(types) {
     if (types === undefined) return;
 
@@ -46,7 +45,7 @@ function CalculatedTypeResult({ typeResult, className }) {
                   {key}
                 </div>
                 {formatTypeResult[key].map((value, idx) => {
-                  return <PokeTypeIcon key={idx} type={value} />;
+                  return <PokeTypeIcon key={idx} type={value} lng={lng} />;
                 })}
               </div>
             </div>

@@ -9,36 +9,46 @@ import CalculatedTypeResult from "./components/CalculatedTypeResult.js";
 
 import SearchPokemon from "./components/SearchPokemon.js";
 import SelectedPokeInfo from "./components/SelectedPokeInfo.js";
+import Footer from "./components/Footer.js";
 
 export default function test() {
   const [searchResult, setSearchResult] = useState({});
   const [typeResult, setTypeResult] = useState([]);
+  const lng = "ko";
 
-  // 이 코드가 모바일에서 동작을 안하는 듯 함
   useEffect(() => {
     console.log(searchResult);
     setTypeResult(searchResult?.types);
   }, [searchResult]);
 
   return (
-    <main className="m-auto max-w-3xl font-mono text-sm">
-      <div className="flex w-full items-center justify-center space-x-6 bg-gray-600 px-1 py-2 text-sm sm:px-2 sm:py-4">
+    <div className="m-auto flex min-h-screen max-w-3xl flex-col text-sm">
+      <header className="flex w-full items-center justify-center space-x-6 bg-gray-600 px-1 py-2 text-sm sm:px-2 sm:py-4">
         <SearchPokemon setResultFc={setSearchResult} />
-      </div>
-      <div>
-        <SelectedPokeInfo searchedPokemon={searchResult} />
-      </div>
-      <div className="mb-1 border"></div>
-      <div className="w-full items-center text-sm sm:py-2">
-        <PokeTypeSelectButtonList
-          typeResult={typeResult}
-          setTypeResultFc={setTypeResult}
-          className="px-2 pt-1 sm:pt-0"
-        />
-        <div className="my-2 border sm:my-3"></div>
-        <CalculatedTypeResult typeResult={typeResult} className="px-2" />
-      </div>
-      <div></div>
-    </main>
+      </header>
+      <main>
+        <div>
+          <SelectedPokeInfo searchedPokemon={searchResult} lng={lng} />
+        </div>
+        <div className="mb-1 border"></div>
+        <div className="w-full flex-grow items-center text-sm sm:py-2">
+          <PokeTypeSelectButtonList
+            typeResult={typeResult}
+            setTypeResultFc={setTypeResult}
+            className="px-2 pt-1 sm:pt-0"
+            lng={lng}
+          />
+          <div className="my-2 border sm:my-3"></div>
+          <CalculatedTypeResult
+            typeResult={typeResult}
+            className="mb-10 px-2"
+            lng={lng}
+          />
+        </div>
+      </main>
+      <footer className="mt-auto">
+        <Footer />
+      </footer>
+    </div>
   );
 }
