@@ -4,8 +4,8 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div class="flex flex-col items-center bg-gray-200 p-4 text-gray-700">
-      <p class="mb-2">© {currentYear} Poke List</p>
+    <div className="flex flex-col items-center bg-gray-200 p-4 text-gray-700">
+      <p className="mb-2">© {currentYear} Poke List</p>
       <Link href="https://github.com/limelee85/poke_list" target="_blank">
         <div className="flex space-x-2">
           <Image

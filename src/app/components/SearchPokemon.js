@@ -10,7 +10,6 @@ import Image from "next/image";
 import { createGenList } from "../utils/generationFunction";
 
 function SearchPokemon({ setResultFc }) {
-
   // 세대 선택 시 포켓몬 리스트 교체
   function changeGen(str) {
     switch (str) {
@@ -126,11 +125,11 @@ function SearchPokemon({ setResultFc }) {
     if ((searchPokemon = pokemons.find((e) => e.name.ko === str))) {
       //20240117 @smogon/calc species 와의 병합을 여기서 수행
       //searchPokemon 순회 >> @smogon/calc에서 가져온 포켓몬 정보 중에 showdown 자작 포켓몬 있음
-      searchPokemon= Object.assign(
+      searchPokemon = Object.assign(
         {},
         new Pokemon(Generations.get(gens), searchPokemon.name.en),
-        searchPokemon
-      )
+        searchPokemon,
+      );
 
       console.log("Search pokemon:", searchPokemon);
       setResultFc(searchPokemon);
@@ -139,7 +138,7 @@ function SearchPokemon({ setResultFc }) {
   }
 
   const [pokemons, setPokemons] = useState(createGenList(9));
-  const [gens , setGens] = useState(9);
+  const [gens, setGens] = useState(9);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [search, setSearch] = useState("");
   const [isHidden, setIsHidden] = useState(true);
@@ -264,7 +263,7 @@ function SearchPokemon({ setResultFc }) {
           hidden={isHidden}
           ref={pokemonSearchListRef}
         >
-          {filteredPokemons?.slice(0, 20).map((pokemon, idx) => (
+          {filteredPokemons?.slice(0, 50).map((pokemon, idx) => (
             <li
               className={`${
                 idx === selectedIndex ? "bg-blue-200" : "bg-transparent"
