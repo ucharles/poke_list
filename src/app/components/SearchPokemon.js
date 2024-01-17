@@ -131,7 +131,6 @@ function SearchPokemon({ setResultFc }) {
         searchPokemon,
       );
 
-      console.log("Search pokemon:", searchPokemon);
       setResultFc(searchPokemon);
       setSearchYN(false);
     }

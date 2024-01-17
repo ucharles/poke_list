@@ -31,7 +31,6 @@ function CalculatedTypeResult({ typeResult, className, lng }) {
     setFormatTypeResult(
       sortTypeResultArray(formatTypeArray(calculateTypeResult)),
     );
-    console.log(formatTypeResult);
   }, [calculateTypeResult]);
 
   return (

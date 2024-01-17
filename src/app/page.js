@@ -17,7 +17,6 @@ export default function test() {
   const lng = "ko";
 
   useEffect(() => {
-    console.log(searchResult);
     setTypeResult(searchResult?.types);
   }, [searchResult]);
 
