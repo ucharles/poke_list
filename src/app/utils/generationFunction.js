@@ -1,5 +1,4 @@
 import { GetPATCH } from "../poke_data.js";
-import { calculate, Generations, Pokemon, Move } from "@smogon/calc";
 
 /*
   showdown 포켓몬 정보 : gens.get([세대]).species.get([포켓몬 영문 명]) 으로 특정 세대에서의 포켓몬 정보를 호출 가능 (타입 외에도 특성 등의 여러 정보 포함되어 있음)
@@ -7,18 +6,8 @@ import { calculate, Generations, Pokemon, Move } from "@smogon/calc";
   새로운 객체는 result Array의 요소로 추가
 */
 export function createGenList(gen) {
-  const result = [];
-  const gen_list = GetPATCH(gen);
-  // gen_list로 순회 >> @smogon/calc에서 가져온 포켓몬 정보 중에 showdown 자작 포켓몬 있음
-  for (const key in gen_list) {
-    result.push(
-      Object.assign(
-        {},
-        new Pokemon(Generations.get(gen), gen_list[key].name.en),
-        gen_list[key]
-      )
-    );
-  }
+  const result = GetPATCH(gen);
+  // 20240117 @smogon/calc 병합 삭제 -> 병합 로직 SearchPokemon.js로 이전
 
   result.sort((a, b) => {
     if (a.name.ko < b.name.ko) {

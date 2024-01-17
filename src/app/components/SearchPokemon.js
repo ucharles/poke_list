@@ -1,6 +1,7 @@
 // SelectGeneration에서 선택된 값에 따라 검색 범위가 달라짐.
 // library
 import { useState, useEffect, useMemo, useRef } from "react";
+import { calculate, Generations, Pokemon, Move } from "@smogon/calc";
 import Image from "next/image";
 
 // component
@@ -25,33 +26,43 @@ function SearchPokemon({ setResultFc }) {
     switch (str) {
       case "RBY":
         setPokemons(RBY);
+        setGens(1);
         break;
       case "GSC":
         setPokemons(GSC);
+        setGens(2);
         break;
       case "ADV":
         setPokemons(ADV);
+        setGens(3);
         break;
       case "DPP":
         setPokemons(DPP);
+        setGens(4);
         break;
       case "BW":
         setPokemons(BW);
+        setGens(5);
         break;
       case "XY":
         setPokemons(XY);
+        setGens(6);
         break;
       case "SM":
         setPokemons(SM);
+        setGens(7);
         break;
       case "SWSH":
         setPokemons(SWSH);
+        setGens(8);
         break;
       case "SV":
         setPokemons(SV);
+        setGens(9);
         break;
       default:
         setPokemons(SV);
+        setGens(9);
     }
   }
 
@@ -122,15 +133,23 @@ function SearchPokemon({ setResultFc }) {
   function searchPokemon(str) {
     let searchPokemon;
     // 검색되는게 있으면
-    console.log("Search pokemon:", searchPokemon);
     if ((searchPokemon = pokemons.find((e) => e.name.ko === str))) {
-      // 이후 이런저런거 하기
+      //20240117 @smogon/calc species 와의 병합을 여기서 수행
+      //searchPokemon 순회 >> @smogon/calc에서 가져온 포켓몬 정보 중에 showdown 자작 포켓몬 있음
+      searchPokemon= Object.assign(
+        {},
+        new Pokemon(Generations.get(gens), searchPokemon.name.en),
+        searchPokemon
+      )
+
+      console.log("Search pokemon:", searchPokemon);
       setResultFc(searchPokemon);
       setSearchYN(false);
     }
   }
 
   const [pokemons, setPokemons] = useState(SV);
+  const [gens , setGens] = useState(9);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [search, setSearch] = useState("");
   const [isHidden, setIsHidden] = useState(true);
