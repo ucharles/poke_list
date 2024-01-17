@@ -10,58 +10,48 @@ import Image from "next/image";
 import { createGenList } from "../utils/generationFunction";
 
 function SearchPokemon({ setResultFc }) {
-  // 검색에 사용할 세대별 Array 생성
-  const RBY = createGenList(1);
-  const GSC = createGenList(2);
-  const ADV = createGenList(3);
-  const DPP = createGenList(4);
-  const BW = createGenList(5);
-  const XY = createGenList(6);
-  const SM = createGenList(7);
-  const SWSH = createGenList(8);
-  const SV = SWSH;
 
   // 세대 선택 시 포켓몬 리스트 교체
   function changeGen(str) {
     switch (str) {
       case "RBY":
-        setPokemons(RBY);
+        setPokemons(createGenList(1));
         setGens(1);
         break;
       case "GSC":
-        setPokemons(GSC);
+        setPokemons(createGenList(2));
         setGens(2);
         break;
       case "ADV":
-        setPokemons(ADV);
+        setPokemons(createGenList(3));
         setGens(3);
         break;
       case "DPP":
-        setPokemons(DPP);
+        setPokemons(createGenList(4));
         setGens(4);
         break;
       case "BW":
-        setPokemons(BW);
+        setPokemons(createGenList(5));
         setGens(5);
         break;
       case "XY":
-        setPokemons(XY);
+        setPokemons(createGenList(6));
         setGens(6);
         break;
       case "SM":
-        setPokemons(SM);
+        setPokemons(createGenList(7));
         setGens(7);
         break;
       case "SWSH":
-        setPokemons(SWSH);
+        setPokemons(createGenList(8));
         setGens(8);
         break;
       case "SV":
-        setPokemons(SV);
+        setPokemons(createGenList(9));
         setGens(9);
         break;
       default:
-        setPokemons(SV);
+        setPokemons(createGenList(9));
         setGens(9);
     }
   }
@@ -148,7 +138,7 @@ function SearchPokemon({ setResultFc }) {
     }
   }
 
-  const [pokemons, setPokemons] = useState(SV);
+  const [pokemons, setPokemons] = useState(createGenList(9));
   const [gens , setGens] = useState(9);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [search, setSearch] = useState("");
