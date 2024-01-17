@@ -11,8 +11,6 @@ function PokeTypeButton({ type, lng, isSelected = false, setTypeResultFc }) {
 
   const handleClick = () => {
     setTypeResultFc((prev) => {
-      console.log(prev);
-
       if (prev === undefined) {
         return [type];
       }
