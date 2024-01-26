@@ -10275,1720 +10275,2047 @@ const SS_PATCH = [
 // 9세대 (SV + 히스이폼)
 const SV_PATCH = [
   {
-      "name": {
-          "ko": "저승갓숭",
-          "en": "Annihilape"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/979.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/979.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "올리르바",
-          "en": "Arboliva"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/930.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/930.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "브리두라스",
-          "en": "Archaludon"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1018.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "드니꽁",
-          "en": "Arctibax"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/997.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/997.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "카디나르마",
-          "en": "Armarouge"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/936.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/936.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "드닐레이브",
-          "en": "Baxcalibur"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/998.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/998.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "찌리배리",
-          "en": "Bellibolt"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/939.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/939.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "떨구새",
-          "en": "Bombirdier"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/962.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/962.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "공푸리",
-          "en": "Brambleghast"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/947.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/947.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "그푸리",
-          "en": "Bramblin"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/946.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/946.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "사나운버섯",
-          "en": "Brute Bonnet"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/986.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/986.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "캡싸이",
-          "en": "Capsakid"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/951.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/951.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "파라블레이즈",
-          "en": "Ceruledge"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/937.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/937.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "우락고래",
-          "en": "Cetitan"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/975.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/975.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "터벅고래",
-          "en": "Cetoddle"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/974.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/974.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "카르본",
-          "en": "Charcadet"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/935.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/935.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "위유이",
-          "en": "Chi-Yu"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1004.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1004.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "파오젠",
-          "en": "Chien-Pao"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1002.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1002.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "토오",
-          "en": "Clodsire"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/980.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/980.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "악뜨거",
-          "en": "Crocalor"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/910.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/910.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "모토마",
-          "en": "Cyclizar"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/967.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/967.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "바우첼",
-          "en": "Dachsbun"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/927.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/927.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "과미르",
-          "en": "Dipplin"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1011.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1011.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "올리뇨",
-          "en": "Dolliv"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/929.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/929.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "어써러셔",
-          "en": "Dondozo"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/977.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/977.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "노고고치",
-          "en": "Dudunsparce"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/982.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/982.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "노고고치-세마디",
-          "en": "Dudunsparce-Three-Segment"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10255.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10255.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "클레스퍼트라",
-          "en": "Espathra"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/956.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/956.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "키키링",
-          "en": "Farigiraf"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/981.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/981.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "기로치",
-          "en": "Fezandipiti"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1016.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1016.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "쫀도기",
-          "en": "Fidough"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/926.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/926.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "맨돌핀",
-          "en": "Finizen"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/963.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/963.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "꼬이밍고",
-          "en": "Flamigo"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/973.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/973.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "하느라기",
-          "en": "Flittle"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/955.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/955.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "나로테",
-          "en": "Floragato"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/907.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/907.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "날개치는머리",
-          "en": "Flutter Mane"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/987.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/987.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "드니차",
-          "en": "Frigibax"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/996.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/996.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "뜨아거",
-          "en": "Fuecoco"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/909.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/909.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "콜로솔트",
-          "en": "Garganacl"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/934.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/934.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "타부자고",
-          "en": "Gholdengo"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1000.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1000.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "모으령",
-          "en": "Gimmighoul"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/999.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/999.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "모으령-도보",
-          "en": "Gimmighoul-Roaming"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10263.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10263.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "초롱순",
-          "en": "Glimmet"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/969.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/969.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "킬라플로르",
-          "en": "Glimmora"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/970.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/970.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "꿰뚫는화염",
-          "en": "Gouging Fire"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1020.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "태깅구르",
-          "en": "Grafaiai"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/945.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/945.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "위대한엄니",
-          "en": "Great Tusk"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/984.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/984.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "망망이",
-          "en": "Greavard"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/971.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/971.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "묘두기",
-          "en": "Houndstone"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/972.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/972.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "과미드라",
-          "en": "Hydrapple"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1019.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "무쇠보따리",
-          "en": "Iron Bundle"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/991.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/991.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "무쇠암석",
-          "en": "Iron Boulder"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1022.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠감투",
-          "en": "Iron Crown"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1023.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "무쇠손",
-          "en": "Iron Hands"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/992.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/992.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠머리",
-          "en": "Iron Jugulis"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/993.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/993.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠잎새",
-          "en": "Iron Leaves"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1010.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1010.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠독나방",
-          "en": "Iron Moth"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/994.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/994.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠가시",
-          "en": "Iron Thorns"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/995.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/995.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠바퀴",
-          "en": "Iron Treads"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/990.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/990.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "무쇠무인",
-          "en": "Iron Valiant"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1006.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1006.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "찌리비크",
-          "en": "Kilowattrel"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/941.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/941.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "대도각참",
-          "en": "Kingambit"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/983.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/983.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "절벼게",
-          "en": "Klawf"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/950.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/950.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "코라이돈",
-          "en": "Koraidon"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1007.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1007.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "맛보돈",
-          "en": "Lechonk"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/915.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/915.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "엑스레그",
-          "en": "Lokix"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/920.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/920.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "마피티프",
-          "en": "Mabosstiff"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/943.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/943.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오라티프",
-          "en": "Maschiff"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/942.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/942.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "파밀리쥐",
-          "en": "Maushold"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10257.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10257.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "파밀리쥐-네식구",
-          "en": "Maushold-Four"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/925.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/925.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "마스카나",
-          "en": "Meowscarada"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/908.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/908.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "미라이돈",
-          "en": "Miraidon"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1008.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1008.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "이야후",
-          "en": "Munkidori"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1015.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1015.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "베베솔트",
-          "en": "Nacli"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/932.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/932.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "스태솔트",
-          "en": "Naclstack"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/933.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/933.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "콩알뚜기",
-          "en": "Nymble"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/919.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/919.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-벽록",
-          "en": "Ogerpon"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1017.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-우물",
-          "en": "Ogerpon-Wellspring"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10273.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10273.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-화덕",
-          "en": "Ogerpon-Hearthflame"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10274.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10274.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-주춧돌",
-          "en": "Ogerpon-Cornerstone"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10275.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10275.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-벽록-테라",
-          "en": "Ogerpon-Teal-Tera"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1017.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-우물-테라",
-          "en": "Ogerpon-Wellspring-Tera"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10273.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10273.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-화덕-테라",
-          "en": "Ogerpon-Hearthflame-Tera"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10274.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10274.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "오거폰-주춧돌-테라",
-          "en": "Ogerpon-Cornerstone-Tera"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10275.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10275.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "퍼퓨돈",
-          "en": "Oinkologne"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/916.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/916.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "퍼퓨돈♀",
-          "en": "Oinkologne-F"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10254.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10254.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "조타구",
-          "en": "Okidogi"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1014.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1014.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "꿈트렁",
-          "en": "Orthworm"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/968.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/968.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "돌핀맨",
-          "en": "Palafin"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/964.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/964.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "돌핀맨-마이티",
-          "en": "Palafin-Hero"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10256.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10256.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "빠모",
-          "en": "Pawmi"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/921.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/921.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "빠모트",
-          "en": "Pawmo"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/922.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/922.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "빠르모트",
-          "en": "Pawmot"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/923.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/923.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "복숭악동",
-          "en": "Pecharunt"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1025.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "차데스",
-          "en": "Poltchageist"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1012.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1012.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "웨이니발",
-          "en": "Quaquaval"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/914.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "꾸왁스",
-          "en": "Quaxly"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/912.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/912.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "아꾸왁",
-          "en": "Quaxwell"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/913.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/913.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "베라카스",
-          "en": "Rabsca"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/954.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/954.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "날뛰는우레",
-          "en": "Raging Bolt"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1021.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "구르데",
-          "en": "Rellor"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/953.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/953.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "부르르룸",
-          "en": "Revavroom"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/966.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/966.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "고동치는달",
-          "en": "Roaring Moon"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1005.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1005.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "모래털가죽",
-          "en": "Sandy Shocks"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/989.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/989.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "스코빌런",
-          "en": "Scovillain"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/952.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/952.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "우렁찬꼬리",
-          "en": "Scream Tail"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/985.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/985.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "땃쭈르",
-          "en": "Shroodle"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/944.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/944.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "그우린차",
-          "en": "Sinistcha"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1013.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "라우드본",
-          "en": "Skeledirge"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/911.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/911.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "땅을기는날개",
-          "en": "Slither Wing"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/988.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/988.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "미니브",
-          "en": "Smoliv"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/928.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/928.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "트래피더",
-          "en": "Spidops"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/918.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/918.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "냐오하",
-          "en": "Sprigatito"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/906.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "시비꼬",
-          "en": "Squawkabilly"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/931.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/931.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "시비꼬-블루페더",
-          "en": "Squawkabilly-Blue"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10260.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10260.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "시비꼬-화이트페더",
-          "en": "Squawkabilly-White"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10262.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10262.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "시비꼬-옐로페더",
-          "en": "Squawkabilly-Yellow"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10261.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10261.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "빈나두",
-          "en": "Tadbulb"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/938.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/938.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "두리쥐",
-          "en": "Tandemaus"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/924.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/924.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "타랜툴라",
-          "en": "Tarountula"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/917.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/917.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "싸리용",
-          "en": "Tatsugiri"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/978.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/978.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "켄타로스-팔데아-아쿠아",
-          "en": "Tauros-Paldea-Aqua"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10252.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "켄타로스-팔데아-블레이즈",
-          "en": "Tauros-Paldea-Blaze"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10251.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10251.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "켄타로스-팔데아-컴뱃",
-          "en": "Tauros-Paldea-Combat"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10250.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10250.png"
-      }
-  },
-  /* @smogon/calc SV2DLC issue
-  {
-      "name": {
-          "ko": "테라파고스",
-          "en": "Terapagos"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1024.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "테라파고스-스텔라",
-          "en": "Terapagos-Stellar"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10277.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10277.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "테라파고스-테라스탈",
-          "en": "Terapagos-Terastal"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10276.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10276.png"
-      }
-  },
-  */
-  {
-      "name": {
-          "ko": "딩루",
-          "en": "Ting-Lu"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1003.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1003.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "어리짱",
-          "en": "Tinkatink"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/957.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/957.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "두드리짱",
-          "en": "Tinkaton"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/959.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/959.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "벼리짱",
-          "en": "Tinkatuff"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/958.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/958.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "들눈해",
-          "en": "Toedscool"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/948.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/948.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "육파리",
-          "en": "Toedscruel"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/949.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/949.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "다투곰",
-          "en": "Ursaluna"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/901.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/901.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "다투곰-붉은달",
-          "en": "Ursaluna-Bloodmoon"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10272.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10272.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "부르롱",
-          "en": "Varoom"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/965.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/965.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "가비루사",
-          "en": "Veluza"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/976.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/976.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "굽이치는물결",
-          "en": "Walking Wake"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1009.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "찌리비",
-          "en": "Wattrel"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/940.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/940.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "바다그다",
-          "en": "Wiglett"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/960.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/960.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "총지엔",
-          "en": "Wo-Chien"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1001.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1001.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "우파-팔데아",
-          "en": "Wooper-Paldea"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10253.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10253.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "바닥트리오",
-          "en": "Wugtrio"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/961.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/961.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "윈디-히스이",
-          "en": "Arcanine-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10230.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10230.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "크레베이스-히스이",
-          "en": "Avalugg-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10243.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10243.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "대쓰여너♂",
-          "en": "Basculegion"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/902.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "대쓰여너♀",
-          "en": "Basculegion-F"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10248.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10248.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "배쓰나이-백색근",
-          "en": "Basculin-White-Striped"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10247.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10247.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "워글-히스이",
-          "en": "Braviary-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10240.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10240.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "모크나이퍼-히스이",
-          "en": "Decidueye-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10244.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10244.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "디아루가-오리진",
-          "en": "Dialga-Origin"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10245.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10245.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "붐볼-히스이",
-          "en": "Electrode-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10232.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10232.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "러브로스",
-          "en": "Enamorus"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/905.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "러브로스-영물",
-          "en": "Enamorus-Therian"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10249.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10249.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "미끄래곤",
-          "en": "Goodra-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10242.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10242.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "가디-히스이",
-          "en": "Growlithe-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10229.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10229.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "사마자르",
-          "en": "Kleavor"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/900.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/900.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "드레디어-히스이",
-          "en": "Lilligant-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10237.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10237.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "장침바루",
-          "en": "Overqwil"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/904.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/904.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "펄기아-오리진",
-          "en": "Palkia-Origin"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10246.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10246.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "침바루-히스이",
-          "en": "Qwilfish-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10234.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10234.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "대검귀-히스이",
-          "en": "Samurott-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10236.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10236.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "미끄네일-히스이",
-          "en": "Sliggoo-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10241.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10241.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "포푸니-히스이",
-          "en": "Sneasel-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10235.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10235.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "포푸니크",
-          "en": "Sneasler"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/903.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/903.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "블레이범-히스이",
-          "en": "Typhlosion-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10233.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10233.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "찌리리공-히스이",
-          "en": "Voltorb-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10231.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10231.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "신비록",
-          "en": "Wyrdeer"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/899.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/899.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "조로아크-히스이",
-          "en": "Zoroark-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10239.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10239.png"
-      }
-  },
-  {
-      "name": {
-          "ko": "조로아-히스이",
-          "en": "Zorua-Hisui"
-      },
-      "image": {
-          "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10238.png",
-          "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10238.png"
-      }
-  }
-]
+    name: {
+      ko: "저승갓숭",
+      en: "Annihilape",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/979.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/979.png",
+    },
+  },
+  {
+    name: {
+      ko: "올리르바",
+      en: "Arboliva",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/930.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/930.png",
+    },
+  },
+  {
+    name: {
+      ko: "브리두라스",
+      en: "Archaludon",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1018.png",
+    },
+  },
+  {
+    name: {
+      ko: "드니꽁",
+      en: "Arctibax",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/997.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/997.png",
+    },
+  },
+  {
+    name: {
+      ko: "카디나르마",
+      en: "Armarouge",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/936.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/936.png",
+    },
+  },
+  {
+    name: {
+      ko: "드닐레이브",
+      en: "Baxcalibur",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/998.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/998.png",
+    },
+  },
+  {
+    name: {
+      ko: "찌리배리",
+      en: "Bellibolt",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/939.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/939.png",
+    },
+  },
+  {
+    name: {
+      ko: "떨구새",
+      en: "Bombirdier",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/962.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/962.png",
+    },
+  },
+  {
+    name: {
+      ko: "공푸리",
+      en: "Brambleghast",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/947.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/947.png",
+    },
+  },
+  {
+    name: {
+      ko: "그푸리",
+      en: "Bramblin",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/946.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/946.png",
+    },
+  },
+  {
+    name: {
+      ko: "사나운버섯",
+      en: "Brute Bonnet",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/986.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/986.png",
+    },
+  },
+  {
+    name: {
+      ko: "캡싸이",
+      en: "Capsakid",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/951.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/951.png",
+    },
+  },
+  {
+    name: {
+      ko: "파라블레이즈",
+      en: "Ceruledge",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/937.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/937.png",
+    },
+  },
+  {
+    name: {
+      ko: "우락고래",
+      en: "Cetitan",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/975.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/975.png",
+    },
+  },
+  {
+    name: {
+      ko: "터벅고래",
+      en: "Cetoddle",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/974.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/974.png",
+    },
+  },
+  {
+    name: {
+      ko: "카르본",
+      en: "Charcadet",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/935.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/935.png",
+    },
+  },
+  {
+    name: {
+      ko: "위유이",
+      en: "Chi-Yu",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1004.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1004.png",
+    },
+  },
+  {
+    name: {
+      ko: "파오젠",
+      en: "Chien-Pao",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1002.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1002.png",
+    },
+  },
+  {
+    name: {
+      ko: "토오",
+      en: "Clodsire",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/980.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/980.png",
+    },
+  },
+  {
+    name: {
+      ko: "악뜨거",
+      en: "Crocalor",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/910.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/910.png",
+    },
+  },
+  {
+    name: {
+      ko: "모토마",
+      en: "Cyclizar",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/967.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/967.png",
+    },
+  },
+  {
+    name: {
+      ko: "바우첼",
+      en: "Dachsbun",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/927.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/927.png",
+    },
+  },
+  {
+    name: {
+      ko: "과미르",
+      en: "Dipplin",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1011.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1011.png",
+    },
+  },
+  {
+    name: {
+      ko: "올리뇨",
+      en: "Dolliv",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/929.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/929.png",
+    },
+  },
+  {
+    name: {
+      ko: "어써러셔",
+      en: "Dondozo",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/977.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/977.png",
+    },
+  },
+  {
+    name: {
+      ko: "노고고치",
+      en: "Dudunsparce",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/982.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/982.png",
+    },
+  },
+  {
+    name: {
+      ko: "노고고치-세마디",
+      en: "Dudunsparce-Three-Segment",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10255.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10255.png",
+    },
+  },
+  {
+    name: {
+      ko: "클레스퍼트라",
+      en: "Espathra",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/956.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/956.png",
+    },
+  },
+  {
+    name: {
+      ko: "키키링",
+      en: "Farigiraf",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/981.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/981.png",
+    },
+  },
+  {
+    name: {
+      ko: "기로치",
+      en: "Fezandipiti",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1016.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1016.png",
+    },
+  },
+  {
+    name: {
+      ko: "쫀도기",
+      en: "Fidough",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/926.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/926.png",
+    },
+  },
+  {
+    name: {
+      ko: "맨돌핀",
+      en: "Finizen",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/963.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/963.png",
+    },
+  },
+  {
+    name: {
+      ko: "꼬이밍고",
+      en: "Flamigo",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/973.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/973.png",
+    },
+  },
+  {
+    name: {
+      ko: "하느라기",
+      en: "Flittle",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/955.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/955.png",
+    },
+  },
+  {
+    name: {
+      ko: "나로테",
+      en: "Floragato",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/907.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/907.png",
+    },
+  },
+  {
+    name: {
+      ko: "날개치는머리",
+      en: "Flutter Mane",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/987.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/987.png",
+    },
+  },
+  {
+    name: {
+      ko: "드니차",
+      en: "Frigibax",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/996.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/996.png",
+    },
+  },
+  {
+    name: {
+      ko: "뜨아거",
+      en: "Fuecoco",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/909.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/909.png",
+    },
+  },
+  {
+    name: {
+      ko: "콜로솔트",
+      en: "Garganacl",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/934.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/934.png",
+    },
+  },
+  {
+    name: {
+      ko: "타부자고",
+      en: "Gholdengo",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1000.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1000.png",
+    },
+  },
+  {
+    name: {
+      ko: "모으령",
+      en: "Gimmighoul",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/999.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/999.png",
+    },
+  },
+  {
+    name: {
+      ko: "모으령-도보",
+      en: "Gimmighoul-Roaming",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10263.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10263.png",
+    },
+  },
+  {
+    name: {
+      ko: "초롱순",
+      en: "Glimmet",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/969.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/969.png",
+    },
+  },
+  {
+    name: {
+      ko: "킬라플로르",
+      en: "Glimmora",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/970.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/970.png",
+    },
+  },
+  {
+    name: {
+      ko: "꿰뚫는화염",
+      en: "Gouging Fire",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1020.png",
+    },
+  },
+  {
+    name: {
+      ko: "태깅구르",
+      en: "Grafaiai",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/945.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/945.png",
+    },
+  },
+  {
+    name: {
+      ko: "위대한엄니",
+      en: "Great Tusk",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/984.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/984.png",
+    },
+  },
+  {
+    name: {
+      ko: "망망이",
+      en: "Greavard",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/971.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/971.png",
+    },
+  },
+  {
+    name: {
+      ko: "묘두기",
+      en: "Houndstone",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/972.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/972.png",
+    },
+  },
+  {
+    name: {
+      ko: "과미드라",
+      en: "Hydrapple",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1019.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠보따리",
+      en: "Iron Bundle",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/991.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/991.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠암석",
+      en: "Iron Boulder",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1022.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠감투",
+      en: "Iron Crown",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1023.png",
+    },
+  },
+
+  {
+    name: {
+      ko: "무쇠손",
+      en: "Iron Hands",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/992.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/992.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠머리",
+      en: "Iron Jugulis",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/993.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/993.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠잎새",
+      en: "Iron Leaves",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1010.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1010.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠독나방",
+      en: "Iron Moth",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/994.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/994.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠가시",
+      en: "Iron Thorns",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/995.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/995.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠바퀴",
+      en: "Iron Treads",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/990.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/990.png",
+    },
+  },
+  {
+    name: {
+      ko: "무쇠무인",
+      en: "Iron Valiant",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1006.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1006.png",
+    },
+  },
+  {
+    name: {
+      ko: "찌리비크",
+      en: "Kilowattrel",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/941.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/941.png",
+    },
+  },
+  {
+    name: {
+      ko: "대도각참",
+      en: "Kingambit",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/983.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/983.png",
+    },
+  },
+  {
+    name: {
+      ko: "절벼게",
+      en: "Klawf",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/950.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/950.png",
+    },
+  },
+  {
+    name: {
+      ko: "코라이돈",
+      en: "Koraidon",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1007.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1007.png",
+    },
+  },
+  {
+    name: {
+      ko: "맛보돈",
+      en: "Lechonk",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/915.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/915.png",
+    },
+  },
+  {
+    name: {
+      ko: "엑스레그",
+      en: "Lokix",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/920.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/920.png",
+    },
+  },
+  {
+    name: {
+      ko: "마피티프",
+      en: "Mabosstiff",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/943.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/943.png",
+    },
+  },
+  {
+    name: {
+      ko: "오라티프",
+      en: "Maschiff",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/942.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/942.png",
+    },
+  },
+  {
+    name: {
+      ko: "파밀리쥐",
+      en: "Maushold",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10257.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10257.png",
+    },
+  },
+  {
+    name: {
+      ko: "파밀리쥐-네식구",
+      en: "Maushold-Four",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/925.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/925.png",
+    },
+  },
+  {
+    name: {
+      ko: "마스카나",
+      en: "Meowscarada",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/908.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/908.png",
+    },
+  },
+  {
+    name: {
+      ko: "미라이돈",
+      en: "Miraidon",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1008.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1008.png",
+    },
+  },
+  {
+    name: {
+      ko: "이야후",
+      en: "Munkidori",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1015.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1015.png",
+    },
+  },
+  {
+    name: {
+      ko: "베베솔트",
+      en: "Nacli",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/932.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/932.png",
+    },
+  },
+  {
+    name: {
+      ko: "스태솔트",
+      en: "Naclstack",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/933.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/933.png",
+    },
+  },
+  {
+    name: {
+      ko: "콩알뚜기",
+      en: "Nymble",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/919.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/919.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-벽록",
+      en: "Ogerpon",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1017.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-우물",
+      en: "Ogerpon-Wellspring",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10273.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10273.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-화덕",
+      en: "Ogerpon-Hearthflame",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10274.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10274.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-주춧돌",
+      en: "Ogerpon-Cornerstone",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10275.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10275.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-벽록-테라",
+      en: "Ogerpon-Teal-Tera",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1017.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-우물-테라",
+      en: "Ogerpon-Wellspring-Tera",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10273.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10273.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-화덕-테라",
+      en: "Ogerpon-Hearthflame-Tera",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10274.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10274.png",
+    },
+  },
+  {
+    name: {
+      ko: "오거폰-주춧돌-테라",
+      en: "Ogerpon-Cornerstone-Tera",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10275.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10275.png",
+    },
+  },
+  {
+    name: {
+      ko: "퍼퓨돈",
+      en: "Oinkologne",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/916.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/916.png",
+    },
+  },
+  {
+    name: {
+      ko: "퍼퓨돈♀",
+      en: "Oinkologne-F",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10254.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10254.png",
+    },
+  },
+  {
+    name: {
+      ko: "조타구",
+      en: "Okidogi",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1014.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1014.png",
+    },
+  },
+  {
+    name: {
+      ko: "꿈트렁",
+      en: "Orthworm",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/968.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/968.png",
+    },
+  },
+  {
+    name: {
+      ko: "돌핀맨",
+      en: "Palafin",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/964.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/964.png",
+    },
+  },
+  {
+    name: {
+      ko: "돌핀맨-마이티",
+      en: "Palafin-Hero",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10256.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10256.png",
+    },
+  },
+  {
+    name: {
+      ko: "빠모",
+      en: "Pawmi",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/921.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/921.png",
+    },
+  },
+  {
+    name: {
+      ko: "빠모트",
+      en: "Pawmo",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/922.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/922.png",
+    },
+  },
+  {
+    name: {
+      ko: "빠르모트",
+      en: "Pawmot",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/923.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/923.png",
+    },
+  },
+  {
+    name: {
+      ko: "복숭악동",
+      en: "Pecharunt",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
+    },
+  },
+  {
+    name: {
+      ko: "차데스",
+      en: "Poltchageist",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1012.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1012.png",
+    },
+  },
+  {
+    name: {
+      ko: "웨이니발",
+      en: "Quaquaval",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/914.png",
+    },
+  },
+  {
+    name: {
+      ko: "꾸왁스",
+      en: "Quaxly",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/912.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/912.png",
+    },
+  },
+  {
+    name: {
+      ko: "아꾸왁",
+      en: "Quaxwell",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/913.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/913.png",
+    },
+  },
+  {
+    name: {
+      ko: "베라카스",
+      en: "Rabsca",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/954.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/954.png",
+    },
+  },
+  {
+    name: {
+      ko: "날뛰는우레",
+      en: "Raging Bolt",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1021.png",
+    },
+  },
+  {
+    name: {
+      ko: "구르데",
+      en: "Rellor",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/953.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/953.png",
+    },
+  },
+  {
+    name: {
+      ko: "부르르룸",
+      en: "Revavroom",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/966.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/966.png",
+    },
+  },
+  {
+    name: {
+      ko: "고동치는달",
+      en: "Roaring Moon",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1005.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1005.png",
+    },
+  },
+  {
+    name: {
+      ko: "모래털가죽",
+      en: "Sandy Shocks",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/989.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/989.png",
+    },
+  },
+  {
+    name: {
+      ko: "스코빌런",
+      en: "Scovillain",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/952.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/952.png",
+    },
+  },
+  {
+    name: {
+      ko: "우렁찬꼬리",
+      en: "Scream Tail",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/985.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/985.png",
+    },
+  },
+  {
+    name: {
+      ko: "땃쭈르",
+      en: "Shroodle",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/944.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/944.png",
+    },
+  },
+  {
+    name: {
+      ko: "그우린차",
+      en: "Sinistcha",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1013.png",
+    },
+  },
+  {
+    name: {
+      ko: "라우드본",
+      en: "Skeledirge",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/911.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/911.png",
+    },
+  },
+  {
+    name: {
+      ko: "땅을기는날개",
+      en: "Slither Wing",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/988.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/988.png",
+    },
+  },
+  {
+    name: {
+      ko: "미니브",
+      en: "Smoliv",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/928.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/928.png",
+    },
+  },
+  {
+    name: {
+      ko: "트래피더",
+      en: "Spidops",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/918.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/918.png",
+    },
+  },
+  {
+    name: {
+      ko: "냐오하",
+      en: "Sprigatito",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/906.png",
+    },
+  },
+  {
+    name: {
+      ko: "시비꼬",
+      en: "Squawkabilly",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/931.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/931.png",
+    },
+  },
+  {
+    name: {
+      ko: "시비꼬-블루페더",
+      en: "Squawkabilly-Blue",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10260.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10260.png",
+    },
+  },
+  {
+    name: {
+      ko: "시비꼬-화이트페더",
+      en: "Squawkabilly-White",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10262.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10262.png",
+    },
+  },
+  {
+    name: {
+      ko: "시비꼬-옐로페더",
+      en: "Squawkabilly-Yellow",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10261.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10261.png",
+    },
+  },
+  {
+    name: {
+      ko: "빈나두",
+      en: "Tadbulb",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/938.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/938.png",
+    },
+  },
+  {
+    name: {
+      ko: "두리쥐",
+      en: "Tandemaus",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/924.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/924.png",
+    },
+  },
+  {
+    name: {
+      ko: "타랜툴라",
+      en: "Tarountula",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/917.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/917.png",
+    },
+  },
+  {
+    name: {
+      ko: "싸리용",
+      en: "Tatsugiri",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/978.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/978.png",
+    },
+  },
+  {
+    name: {
+      ko: "켄타로스-팔데아-아쿠아",
+      en: "Tauros-Paldea-Aqua",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10252.png",
+    },
+  },
+  {
+    name: {
+      ko: "켄타로스-팔데아-블레이즈",
+      en: "Tauros-Paldea-Blaze",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10251.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10251.png",
+    },
+  },
+  {
+    name: {
+      ko: "켄타로스-팔데아-컴뱃",
+      en: "Tauros-Paldea-Combat",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10250.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10250.png",
+    },
+  },
+  {
+    name: {
+      ko: "테라파고스",
+      en: "Terapagos",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1024.png",
+    },
+  },
+  {
+    name: {
+      ko: "테라파고스-스텔라",
+      en: "Terapagos-Stellar",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10277.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10277.png",
+    },
+  },
+  {
+    name: {
+      ko: "테라파고스-테라스탈",
+      en: "Terapagos-Terastal",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10276.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10276.png",
+    },
+  },
+  {
+    name: {
+      ko: "딩루",
+      en: "Ting-Lu",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1003.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1003.png",
+    },
+  },
+  {
+    name: {
+      ko: "어리짱",
+      en: "Tinkatink",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/957.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/957.png",
+    },
+  },
+  {
+    name: {
+      ko: "두드리짱",
+      en: "Tinkaton",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/959.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/959.png",
+    },
+  },
+  {
+    name: {
+      ko: "벼리짱",
+      en: "Tinkatuff",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/958.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/958.png",
+    },
+  },
+  {
+    name: {
+      ko: "들눈해",
+      en: "Toedscool",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/948.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/948.png",
+    },
+  },
+  {
+    name: {
+      ko: "육파리",
+      en: "Toedscruel",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/949.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/949.png",
+    },
+  },
+  {
+    name: {
+      ko: "다투곰",
+      en: "Ursaluna",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/901.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/901.png",
+    },
+  },
+  {
+    name: {
+      ko: "다투곰-붉은달",
+      en: "Ursaluna-Bloodmoon",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10272.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10272.png",
+    },
+  },
+  {
+    name: {
+      ko: "부르롱",
+      en: "Varoom",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/965.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/965.png",
+    },
+  },
+  {
+    name: {
+      ko: "가비루사",
+      en: "Veluza",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/976.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/976.png",
+    },
+  },
+  {
+    name: {
+      ko: "굽이치는물결",
+      en: "Walking Wake",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1009.png",
+    },
+  },
+  {
+    name: {
+      ko: "찌리비",
+      en: "Wattrel",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/940.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/940.png",
+    },
+  },
+  {
+    name: {
+      ko: "바다그다",
+      en: "Wiglett",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/960.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/960.png",
+    },
+  },
+  {
+    name: {
+      ko: "총지엔",
+      en: "Wo-Chien",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1001.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1001.png",
+    },
+  },
+  {
+    name: {
+      ko: "우파-팔데아",
+      en: "Wooper-Paldea",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10253.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10253.png",
+    },
+  },
+  {
+    name: {
+      ko: "바닥트리오",
+      en: "Wugtrio",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/961.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/961.png",
+    },
+  },
+  {
+    name: {
+      ko: "윈디-히스이",
+      en: "Arcanine-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10230.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10230.png",
+    },
+  },
+  {
+    name: {
+      ko: "크레베이스-히스이",
+      en: "Avalugg-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10243.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10243.png",
+    },
+  },
+  {
+    name: {
+      ko: "대쓰여너♂",
+      en: "Basculegion",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/902.png",
+    },
+  },
+  {
+    name: {
+      ko: "대쓰여너♀",
+      en: "Basculegion-F",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10248.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10248.png",
+    },
+  },
+  {
+    name: {
+      ko: "배쓰나이-백색근",
+      en: "Basculin-White-Striped",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10247.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10247.png",
+    },
+  },
+  {
+    name: {
+      ko: "워글-히스이",
+      en: "Braviary-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10240.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10240.png",
+    },
+  },
+  {
+    name: {
+      ko: "모크나이퍼-히스이",
+      en: "Decidueye-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10244.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10244.png",
+    },
+  },
+  {
+    name: {
+      ko: "디아루가-오리진",
+      en: "Dialga-Origin",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10245.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10245.png",
+    },
+  },
+  {
+    name: {
+      ko: "붐볼-히스이",
+      en: "Electrode-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10232.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10232.png",
+    },
+  },
+  {
+    name: {
+      ko: "러브로스",
+      en: "Enamorus",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/905.png",
+    },
+  },
+  {
+    name: {
+      ko: "러브로스-영물",
+      en: "Enamorus-Therian",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10249.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10249.png",
+    },
+  },
+  {
+    name: {
+      ko: "미끄래곤",
+      en: "Goodra-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10242.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10242.png",
+    },
+  },
+  {
+    name: {
+      ko: "가디-히스이",
+      en: "Growlithe-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10229.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10229.png",
+    },
+  },
+  {
+    name: {
+      ko: "사마자르",
+      en: "Kleavor",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/900.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/900.png",
+    },
+  },
+  {
+    name: {
+      ko: "드레디어-히스이",
+      en: "Lilligant-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10237.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10237.png",
+    },
+  },
+  {
+    name: {
+      ko: "장침바루",
+      en: "Overqwil",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/904.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/904.png",
+    },
+  },
+  {
+    name: {
+      ko: "펄기아-오리진",
+      en: "Palkia-Origin",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10246.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10246.png",
+    },
+  },
+  {
+    name: {
+      ko: "침바루-히스이",
+      en: "Qwilfish-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10234.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10234.png",
+    },
+  },
+  {
+    name: {
+      ko: "대검귀-히스이",
+      en: "Samurott-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10236.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10236.png",
+    },
+  },
+  {
+    name: {
+      ko: "미끄네일-히스이",
+      en: "Sliggoo-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10241.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10241.png",
+    },
+  },
+  {
+    name: {
+      ko: "포푸니-히스이",
+      en: "Sneasel-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10235.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10235.png",
+    },
+  },
+  {
+    name: {
+      ko: "포푸니크",
+      en: "Sneasler",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/903.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/903.png",
+    },
+  },
+  {
+    name: {
+      ko: "블레이범-히스이",
+      en: "Typhlosion-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10233.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10233.png",
+    },
+  },
+  {
+    name: {
+      ko: "찌리리공-히스이",
+      en: "Voltorb-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10231.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10231.png",
+    },
+  },
+  {
+    name: {
+      ko: "신비록",
+      en: "Wyrdeer",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/899.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/899.png",
+    },
+  },
+  {
+    name: {
+      ko: "조로아크-히스이",
+      en: "Zoroark-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10239.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10239.png",
+    },
+  },
+  {
+    name: {
+      ko: "조로아-히스이",
+      en: "Zorua-Hisui",
+    },
+    image: {
+      default:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10238.png",
+      shiny:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10238.png",
+    },
+  },
+];
 
 // type 에 대한 정의
 const TYPE_LIST = {
