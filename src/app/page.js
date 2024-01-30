@@ -7,19 +7,28 @@ import { useState, useEffect } from "react";
 import PokeTypeSelectButtonList from "./components/PokeTypeSelectButtonList.js";
 import CalculatedTypeResult from "./components/CalculatedTypeResult.js";
 
+import Patchnote from "./components/Patchnote";
 import SearchPokemon from "./components/SearchPokemon.js";
 import SelectedPokeInfo from "./components/SelectedPokeInfo.js";
 import Footer from "./components/Footer.js";
 
-export default function test() {
+export default function Page() {
   const [searchResult, setSearchResult] = useState({});
   const [typeResult, setTypeResult] = useState([]);
+  const [isPatchnoteOpen, setIsPatchnoteOpen] = useState(true);
   const lng = "ko";
 
   useEffect(() => {
     console.log(searchResult);
     setTypeResult(searchResult?.types);
   }, [searchResult]);
+
+  // typeResult가 처음 변경되었을 때 패치노트를 닫고, 다시 열지 않음
+  useEffect(() => {
+    if (typeResult?.length > 0) {
+      setIsPatchnoteOpen(false);
+    }
+  }, [typeResult]);
 
   return (
     <div className="m-auto flex min-h-screen max-w-3xl flex-col text-sm">
@@ -39,6 +48,8 @@ export default function test() {
             lng={lng}
           />
           <div className="my-2 border sm:my-3"></div>
+          <Patchnote className={`px-2 ${isPatchnoteOpen ? "" : "hidden"}`} />
+
           <CalculatedTypeResult
             typeResult={typeResult}
             className="mb-10 px-2"
