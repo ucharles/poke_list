@@ -19,7 +19,7 @@ function PokemonImage({ pokemon }) {
         width={74}
         height={74}
       />
-      {pokemon?.image?.shiny ? (
+      {pokemon?.image?.default !== pokemon?.image?.shiny ? (
         <button
           onClick={() => setIsShiny(!isShiny)}
           className="absolute right-0 top-0"
