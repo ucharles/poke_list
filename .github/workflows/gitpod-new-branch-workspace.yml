@@ -26,12 +26,13 @@ jobs:
           WORKSPACE_URL=$(./gitpod ws create github.com/$repoFullName/tree/$branchName)
 
       - name: Setting ENV
+        id: set_env
         run: |
           echo "BRANCH_NAME=$branchName" >> $GITHUB_ENV
           echo "WORKSPACE_URL=$WORKSPACE_URL" >> $GITHUB_ENV
 
       - name: Stop the workspace
-        if: steps.create_workspace.outputs.exit_code == 0
+        if: steps.set_env.outputs.exit_code == 0
         run: |
           ./gitpod ws stop ${{ env.WORKSPACE_URL }}
 
