@@ -23,15 +23,18 @@ jobs:
         run: |
           branchName=${GITHUB_REF#refs/heads/}
           repoFullName=${{ github.repository }}
-          WORKSPACE_URL=$(./gitpod ws create github.com/$repoFullName/tree/$branchName --dont-wait)
+          WORKSPACE_URL=$(./gitpod ws create github.com/$repoFullName/tree/$branchName)
+
+      - name: Setting ENV
+        run: |
           echo "BRANCH_NAME=$branchName" >> $GITHUB_ENV
           echo "WORKSPACE_URL=$WORKSPACE_URL" >> $GITHUB_ENV
 
       - name: Stop the workspace
         if: steps.create_workspace.outputs.exit_code == 0
         run: |
-          sleep 60
           ./gitpod ws stop ${{ env.WORKSPACE_URL }}
+
     environment:
       name: Workspace
       url: https://gitpod.io/start/#${{ env.WORKSPACE_URL }}
