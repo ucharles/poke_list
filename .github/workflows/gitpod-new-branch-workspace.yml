@@ -1,7 +1,7 @@
 name: Gitpod Workspace on New Branch
 
 on:
-  create:
+  push:
     branches:
       - "dev/**"
 
