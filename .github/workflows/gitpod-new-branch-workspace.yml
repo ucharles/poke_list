@@ -28,7 +28,7 @@ jobs:
           echo "WORKSPACE_URL=$WORKSPACE_URL" >> $GITHUB_ENV
 
       - name: Stop the workspace
-        run: gitpod workspace stop ${{ env.WORKSPACE_URL }}
+        run: ./gitpod workspace stop ${{ env.WORKSPACE_URL }}
     environment:
       name: Workspace
       url: https://gitpod.io/start/#${{ env.WORKSPACE_URL }}
