@@ -36,7 +36,3 @@ jobs:
           WORKSPACE_URL=$(./gitpod ws create github.com/$repoFullName/tree/$branchName --dont-wait)
           echo "WORKSPACE_URL=$WORKSPACE_URL" >> $GITHUB_ENV
           echo "::set-output name=workspace_url::$WORKSPACE_URL"
-
-      # Use this step to echo the URL or use it in a way that suits your workflow
-      - name: Output Workspace URL
-        run: echo 'Gitpod Workspace URL: ${{ steps.create_workspace.outputs.workspace_url }}'
