@@ -8,17 +8,10 @@ on:
 jobs:
   gitpod-workspace-creation:
     runs-on: ubuntu-latest
+    environment:
+      name: Workspace
+      url: https://gitpod.io/start/#${{ env.WORKSPACE_URL }}
     steps:
-      - name: Check branch name
-        id: check_branch
-        run: |
-          if [[ $GITHUB_REF == refs/heads/dev/** ]]; then
-            echo "Valid branch. Proceeding with workflow."
-          else
-            echo "Branch does not match 'dev/**'. Exiting workflow."
-            exit 78 # Exiting with a neutral status, but GitHub Actions might not support neutral status exits anymore. Adjust as necessary.
-          fi
-
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -34,5 +27,5 @@ jobs:
           branchName=${GITHUB_REF#refs/heads/}
           repoFullName=${{ github.repository }}
           WORKSPACE_URL=$(./gitpod ws create github.com/$repoFullName/tree/$branchName --dont-wait)
+          echo "branchName=$BRANCH_NAME" >> $GITHUB_ENV
           echo "WORKSPACE_URL=$WORKSPACE_URL" >> $GITHUB_ENV
-          echo "::set-output name=workspace_url::$WORKSPACE_URL"
