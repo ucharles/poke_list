@@ -29,7 +29,9 @@ jobs:
 
       - name: Stop the workspace
         if: steps.create_workspace.outputs.exit_code == 0
-        run: ./gitpod ws stop ${{ env.WORKSPACE_URL }}
+        run: |
+          sleep 180
+          ./gitpod ws stop ${{ env.WORKSPACE_URL }}
     environment:
       name: Workspace
       url: https://gitpod.io/start/#${{ env.WORKSPACE_URL }}
