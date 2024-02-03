@@ -35,5 +35,5 @@ jobs:
           ./gitpod ws stop ${{ env.WORKSPACE_URL }}
 
     environment:
-      name: ${{ github.ref_name }}
+      name: Workspace
       url: https://gitpod.io/start/#${{ env.WORKSPACE_URL }}
