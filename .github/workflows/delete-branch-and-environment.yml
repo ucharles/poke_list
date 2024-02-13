@@ -29,6 +29,7 @@ jobs:
           headers = {
             'Authorization': f'token {os.getenv("GITHUB_TOKEN")}',
             'Accept': 'application/vnd.github.v3+json',
+            'X-GitHub-Api-Version': '2022-11-28',
           }
 
           url = f'https://api.github.com/repos/{os.getenv("GITHUB_REPOSITORY")}/environments/{environment_name}'
