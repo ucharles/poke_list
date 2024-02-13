@@ -6,7 +6,7 @@ on:
 jobs:
   deleteEnvironment:
     runs-on: ubuntu-latest
-    if: github.event.ref_type == 'branch'
+    if: github.event.ref_type == 'branch' && startsWith(github.ref, 'refs/heads/dev/')
     steps:
       - name: Setup Python
         uses: actions/setup-python@v5
