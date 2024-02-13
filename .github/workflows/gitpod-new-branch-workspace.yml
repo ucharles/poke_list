@@ -1,7 +1,7 @@
 name: Gitpod Workspace on New Branch
 
 on:
-  push:
+  pull_request:
     branches:
       - "dev/**"
 
@@ -35,5 +35,5 @@ jobs:
           ./gitpod ws stop ${{ env.WORKSPACE_URL }}
 
     environment:
-      name: Workspace
+      name: ${{ GITHUB.ref_name }}
       url: https://gitpod.io/start/#${{ env.WORKSPACE_URL }}

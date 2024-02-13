@@ -1,0 +1,41 @@
+name: Delete Environment on Branch Deletion
+
+on:
+  delete:
+
+jobs:
+  deleteEnvironment:
+    runs-on: ubuntu-latest
+    if: github.event.ref_type == 'branch'
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Delete GitHub Environment
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          import requests
+          import os
+
+          branch_name = '${{ github.event.ref }}'.replace("/", "%2F")
+          environment_name = branch_name
+          headers = {
+            'Authorization': f'token {os.getenv("GITHUB_TOKEN")}',
+            'Accept': 'application/vnd.github.v3+json',
+          }
+
+          url = f'https://api.github.com/repos/{os.getenv("GITHUB_REPOSITORY")}/environments/{environment_name}'
+          response = requests.delete(url, headers=headers)
+
+          if response.status_code == 204:
+              print(f"Environment {environment_name} deleted successfully.")
+          else:
+              print(f"Failed to delete environment {environment_name}. Status code: {response.status_code}")
+        shell: python
