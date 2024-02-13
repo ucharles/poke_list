@@ -33,6 +33,10 @@ export function formatTypeArray(typeArray) {
 }
 
 export function sortTypeResultArray(data, order = true) {
+  if (data === null || data === undefined) {
+    return {};
+  }
+
   const SORT_ORDER = ["×8", "×4", "×2", "÷2", "÷4", "÷8", "X"];
 
   const orderedSortOrder = order ? SORT_ORDER : SORT_ORDER.slice().reverse();
