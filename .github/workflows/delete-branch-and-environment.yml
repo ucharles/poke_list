@@ -24,8 +24,8 @@ jobs:
           branch_name = '${{ github.event.ref }}'.replace("/", "%2F")
           environment_name = branch_name
           headers = {
-            'Authorization': f'token ${{ secrets.TOKEN }}',
-            'Accept': 'application/vnd.github.v3+json',
+            'Authorization': f'Bearer ${{ secrets.TOKEN }}',
+            'Accept': 'application/vnd.github+json',
             'X-GitHub-Api-Version': '2022-11-28',
           }
 
